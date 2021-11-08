@@ -1,12 +1,13 @@
+import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Nav } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 
-import "../styles/NavBar.css";
+import "../styles/NavigationBar.css";
 
-function App() {
+const NavigationBar = () => {
   return (
-    <div className="App">
-      <Nav className="justify-content-end" activeKey="/inicio">
+    <React.Fragment>
+      <Navbar fixed="top" className="NavigationBar justify-content-end " collapseOnSelect >
         <Nav.Item>
           <Nav.Link href="/inicio" className="text-dark">
             Nosotros
@@ -35,9 +36,9 @@ function App() {
             Crear Oferta
           </Nav.Link>
         </Nav.Item>
-      </Nav>
-    </div>
-  );
+      </Navbar>
+    </React.Fragment>
+  )
 }
 
-export default App;
+export default NavigationBar;

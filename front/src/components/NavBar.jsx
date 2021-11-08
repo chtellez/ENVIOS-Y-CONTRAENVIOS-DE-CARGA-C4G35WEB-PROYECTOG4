@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Nav } from "react-bootstrap";
 
-import "../App.css";
+import "../styles/NavBar.css";
 
 function App() {
   return (
@@ -24,6 +24,16 @@ function App() {
         </Nav.Item>
         <Nav.Item>
           <Nav.Link className="text-dark">Contacto</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/" className="text-dark">
+            Home
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/crear_oferta" className="text-dark">
+            Crear Oferta
+          </Nav.Link>
         </Nav.Item>
       </Nav>
     </div>

@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import C_CrearOferta from './components/C_CrearOferta';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <C_CrearOferta />
   </React.StrictMode>,
   document.getElementById('root')
 );

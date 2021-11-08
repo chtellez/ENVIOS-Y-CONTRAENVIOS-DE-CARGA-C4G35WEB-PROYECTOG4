@@ -1,0 +1,17 @@
+
+.card{
+    margin-top: 5px;
+    border-radius: 10px;
+}
+.card-header{
+    background: linear-gradient(150deg, #cc4218, #fcc510);
+    border-radius: 10px;
+}
+.btn{
+    margin-left: 90%;
+    margin-bottom: 30px;
+}
+.actualizarbtn{
+    margin-left: 50%;
+    margin-bottom: 30px;
+}

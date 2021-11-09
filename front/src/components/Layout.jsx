@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import fondopg from "../Img/fondopg.jpg";
 
 const Layout = ({children}) => {
     return(

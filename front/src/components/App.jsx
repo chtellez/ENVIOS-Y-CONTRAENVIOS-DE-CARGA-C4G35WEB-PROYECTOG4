@@ -9,6 +9,7 @@ import Layout from './Layout'
 import NavigationBar from "./NavigationBar";
 import Home from "../pages/Home";
 import CrearOferta from "../pages/CrearOferta";
+import CrearSolicitudCarga from "../pages/CrearSolicitudCarga";
 import Footer from "./Footer";
 
 
@@ -28,6 +29,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />}></Route>
             <Route exact path="/crear_oferta" element={<CrearOferta />}></Route>
+            <Route exact path="/crear_solicitud_carga" element={<CrearSolicitudCarga />}></Route>
           </Routes>
         </BrowserRouter>
       </Layout>

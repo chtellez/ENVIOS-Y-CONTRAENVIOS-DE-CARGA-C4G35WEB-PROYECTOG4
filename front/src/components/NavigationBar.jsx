@@ -36,6 +36,11 @@ const NavigationBar = () => {
             Crear Oferta
           </Nav.Link>
         </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/solicitudes" className="text-dark">
+            Demanda
+          </Nav.Link>
+        </Nav.Item>
       </Navbar>
     </React.Fragment>
   )

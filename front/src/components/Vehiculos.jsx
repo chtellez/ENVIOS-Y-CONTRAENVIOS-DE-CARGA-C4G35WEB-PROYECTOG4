@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Card, Button, OverlayTrigger,Tooltip, Popover, ListGroup, Col } from "react-bootstrap";
+import { Table, Card, Button, OverlayTrigger,Tooltip} from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const realizarOferta = (props) => (

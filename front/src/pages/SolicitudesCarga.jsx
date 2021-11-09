@@ -1,13 +1,7 @@
 import React from "react";
-import { Table, Card, Button, OverlayTrigger,Tooltip, Popover, ListGroup, Col } from "react-bootstrap";
+import { Table, Card, Button, OverlayTrigger, Popover, ListGroup } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Vehiculos from "../components/Vehiculos";
-
-const realizarOferta = (props) => (
-    <Tooltip id="button-tooltip" {...props}>
-      Realizar oferta
-    </Tooltip>
-  );
 
   const mostrarVehiculos = (
     <Popover id="popover-basic" style={{ width:"1000px"}}>

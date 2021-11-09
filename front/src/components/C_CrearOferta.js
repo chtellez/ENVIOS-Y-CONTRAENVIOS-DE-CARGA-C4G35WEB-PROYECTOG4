@@ -2,20 +2,6 @@ import React from "react";
 import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-/*
-import PropTypes from "prop-types";
-
-const C_CrearOferta = props => {
-    return         <div></div>
-}
-
-C_CrearOferta.prototypes = {
-
-}
-
-export default C_CrearOferta*/
-
 class C_CrearOferta extends React.Component {
     constructor(props) {
         super(props);

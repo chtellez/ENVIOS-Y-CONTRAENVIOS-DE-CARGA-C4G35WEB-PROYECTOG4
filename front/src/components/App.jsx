@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "../pages/Home";
 import CrearOferta from "../pages/CrearOferta";
-import AceptarOferta from "../components/AceptarOferta";
-import Perfil from "../components/Perfil";
+import AceptarOferta from "../pages/AceptarOferta";
+import Perfil from "../pages/Perfil";
 
 // import CrearOferta from "../pages/CrearOferta";
 

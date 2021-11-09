@@ -1,11 +1,15 @@
 import React from "react";
-import { Table, Card, Button, OverlayTrigger,Tooltip, Popover, ListGroup, Col } from "react-bootstrap";
+import { Table, Card, Button, OverlayTrigger, Popover, ListGroup } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Vehiculos from "../components/Vehiculos";
 
-const realizarOferta = (props) => (
-    <Tooltip id="button-tooltip" {...props}>
-      Realizar oferta
-    </Tooltip>
+  const mostrarVehiculos = (
+    <Popover id="popover-basic" style={{ width:"1000px"}}>
+      <Popover.Header as="h3">Vehículos Registrados</Popover.Header>
+      <Popover.Body>
+        <Vehiculos/>
+      </Popover.Body>
+    </Popover>
   );
 
   const primerSolicitud = (
@@ -158,9 +162,10 @@ const SolicitudesCarga = () => {
                                         </OverlayTrigger>
                                     
                                         <OverlayTrigger
-                                            placement="top"
+                                            trigger="click"
+                                            placement="left"
                                             delay={{ show: 250, hide: 400 }}
-                                            overlay={realizarOferta}
+                                            overlay={mostrarVehiculos}
                                         >
                                             <Button variant="success" className="px-1 py-0" ><FontAwesomeIcon icon={'vote-yea'} size="sm"/></Button>
                                         </OverlayTrigger>
@@ -183,9 +188,10 @@ const SolicitudesCarga = () => {
                                         </OverlayTrigger>
                                     
                                         <OverlayTrigger
-                                            placement="top"
+                                            trigger="click"
+                                            placement="left"
                                             delay={{ show: 250, hide: 400 }}
-                                            overlay={realizarOferta}
+                                            overlay={mostrarVehiculos}
                                         >
                                             <Button variant="success" className="px-1 py-0" ><FontAwesomeIcon icon={'vote-yea'} size="sm"/></Button>
                                         </OverlayTrigger>
@@ -208,9 +214,10 @@ const SolicitudesCarga = () => {
                                         </OverlayTrigger>
                                     
                                         <OverlayTrigger
-                                            placement="top"
+                                            trigger="click"
+                                            placement="left"
                                             delay={{ show: 250, hide: 400 }}
-                                            overlay={realizarOferta}
+                                            overlay={mostrarVehiculos}
                                         >
                                             <Button variant="success" className="px-1 py-0" ><FontAwesomeIcon icon={'vote-yea'} size="sm"/></Button>
                                         </OverlayTrigger>
@@ -233,9 +240,10 @@ const SolicitudesCarga = () => {
                                         </OverlayTrigger>
                                     
                                         <OverlayTrigger
-                                            placement="top"
+                                            trigger="click"
+                                            placement="left"
                                             delay={{ show: 250, hide: 400 }}
-                                            overlay={realizarOferta}
+                                            overlay={mostrarVehiculos}
                                         >
                                             <Button variant="success" className="px-1 py-0" ><FontAwesomeIcon icon={'vote-yea'} size="sm"/></Button>
                                         </OverlayTrigger>
@@ -258,9 +266,10 @@ const SolicitudesCarga = () => {
                                         </OverlayTrigger>
                                     
                                         <OverlayTrigger
-                                            placement="top"
+                                            trigger="click"
+                                            placement="left"
                                             delay={{ show: 250, hide: 400 }}
-                                            overlay={realizarOferta}
+                                            overlay={mostrarVehiculos}
                                         >
                                             <Button variant="success" className="px-1 py-0" ><FontAwesomeIcon icon={'vote-yea'} size="sm"/></Button>
                                         </OverlayTrigger>
@@ -277,15 +286,16 @@ const SolicitudesCarga = () => {
                                         <OverlayTrigger
                                             placement="left"
                                             delay={{ show: 250, hide: 400 }}
-                                            overlay={primerSolicitud}
+                                            overlay={sextaSolicitud}
                                         >
                                             <Button variant="primary" className="px-1 py-0" ><FontAwesomeIcon icon={'id-card'} size="sm"/></Button>
                                         </OverlayTrigger>
                                     
                                         <OverlayTrigger
-                                            placement="top"
+                                            trigger="click"
+                                            placement="left"
                                             delay={{ show: 250, hide: 400 }}
-                                            overlay={realizarOferta}
+                                            overlay={mostrarVehiculos}
                                         >
                                             <Button variant="success" className="px-1 py-0" ><FontAwesomeIcon icon={'vote-yea'} size="sm"/></Button>
                                         </OverlayTrigger>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../Styles/Perfil.css";
+import "../styles/Perfil.css";
 import { Form, Container, Row, Col, Card, FloatingLabel, Button } from "react-bootstrap";
 
 export default class Perfil extends Component {
@@ -9,12 +9,12 @@ export default class Perfil extends Component {
         <Container>
           <Row>
             <Col>
-              <Card style={{ width: "auto" }}>
-                <Card.Header>Tipo de usuario</Card.Header>
+              <Card style={{ width: "auto" }} className="principal">
+                <Card.Header className="titulis">Tipo de usuario</Card.Header>
                 <Card.Body>
                   <Row>
                     <Col>
-                      <Button ClassName="justify-content-end" href="#">
+                      <Button ClassName="editar" href="#">
                         Editar
                       </Button>
                     </Col>

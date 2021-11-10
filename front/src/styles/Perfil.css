@@ -1,13 +1,13 @@
 
-.card{
+.principal{
     margin-top: 5px;
     border-radius: 10px;
 }
-.card-header{
+.titulis{
     background: linear-gradient(150deg, #cc4218, #fcc510);
     border-radius: 10px;
 }
-.btn{
+.editar{
     margin-left: 90%;
     margin-bottom: 30px;
 }

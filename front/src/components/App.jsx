@@ -18,8 +18,8 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
           <Route exact path="/crear_oferta" element={<CrearOferta />}></Route>
-          <Route exact path="/AceptarOferta" element={<AceptarOferta />}></Route>
-          <Route exact path="/Perfil" element={<Perfil />}></Route>
+          <Route exact path="/aceptar_oferta" element={<AceptarOferta />}></Route>
+          <Route exact path="/perfil" element={<Perfil />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

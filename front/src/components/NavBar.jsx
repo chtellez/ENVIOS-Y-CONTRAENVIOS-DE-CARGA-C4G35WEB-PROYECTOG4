@@ -13,8 +13,8 @@ function App() {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="link-1" className="text-dark">
-            Servicios
+          <Nav.Link href="/aceptar_Oferta" className="text-dark">
+            Aceptar Oferta
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
@@ -33,6 +33,11 @@ function App() {
         <Nav.Item>
           <Nav.Link href="/crear_oferta" className="text-dark">
             Crear Oferta
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/perfil" className="text-dark">
+            Perfil
           </Nav.Link>
         </Nav.Item>
       </Nav>

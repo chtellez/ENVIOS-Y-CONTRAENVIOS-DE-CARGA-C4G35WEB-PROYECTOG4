@@ -9,17 +9,14 @@ import Layout from './Layout'
 import NavigationBar from "./NavigationBar";
 import Home from "../pages/Home";
 import CrearOferta from "../pages/CrearOferta";
-<<<<<<< HEAD
 import AceptarOferta from "../pages/AceptarOferta";
 import Perfil from "../pages/Perfil";
-=======
 import Footer from "./Footer";
 import SolicitudesCarga from "../pages/SolicitudesCarga";
 
 
 library.add(fab, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck)
 
->>>>>>> af40ea2c9b4f6ce9b39a92ce39f15f8cebeef066
 
 // import CrearOferta from "../pages/CrearOferta";
 
@@ -29,29 +26,20 @@ function App() {
       <header className="App-header">
         <NavigationBar></NavigationBar>
       </header>
-<<<<<<< HEAD
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<Home />}></Route>
-          <Route exact path="/crear_oferta" element={<CrearOferta />}></Route>
-          <Route exact path="/aceptar_oferta" element={<AceptarOferta />}></Route>
-          <Route exact path="/perfil" element={<Perfil />}></Route>
-        </Routes>
-      </BrowserRouter>
-=======
       <Layout>
         <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<Home />}></Route>
             <Route exact path="/crear_oferta" element={<CrearOferta />}></Route>
             <Route exact path="/solicitudes" element={<SolicitudesCarga />}></Route>
+            <Route exact path="/aceptar_oferta" element={<AceptarOferta />}></Route>
+            <Route exact path="/perfil" element={<Perfil />}></Route>
           </Routes>
         </BrowserRouter>
       </Layout>
       <footer>
         <Footer/>
       </footer>
->>>>>>> af40ea2c9b4f6ce9b39a92ce39f15f8cebeef066
     </div>
   );
 }

@@ -37,23 +37,18 @@ const NavigationBar = () => {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-<<<<<<< HEAD:front/src/components/NavBar.jsx
-          <Nav.Link href="/perfil" className="text-dark">
-            Perfil
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>
-    </div>
-  );
-=======
           <Nav.Link href="/solicitudes" className="text-dark">
             Demanda
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/perfil" className="text-dark">
+            Perfil
           </Nav.Link>
         </Nav.Item>
       </Navbar>
     </React.Fragment>
   )
->>>>>>> af40ea2c9b4f6ce9b39a92ce39f15f8cebeef066:front/src/components/NavigationBar.jsx
 }
 
 export default NavigationBar;

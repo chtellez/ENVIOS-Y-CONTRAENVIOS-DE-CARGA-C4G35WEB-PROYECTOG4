@@ -1,12 +1,13 @@
+import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Nav } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 
-import "../styles/NavBar.css";
+import "../styles/NavigationBar.css";
 
-function App() {
+const NavigationBar = () => {
   return (
-    <div className="App">
-      <Nav className="justify-content-end" activeKey="/inicio">
+    <React.Fragment>
+      <Navbar fixed="top" className="NavigationBar justify-content-end " collapseOnSelect >
         <Nav.Item>
           <Nav.Link href="/inicio" className="text-dark">
             Nosotros
@@ -36,6 +37,7 @@ function App() {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
+<<<<<<< HEAD:front/src/components/NavBar.jsx
           <Nav.Link href="/perfil" className="text-dark">
             Perfil
           </Nav.Link>
@@ -43,6 +45,15 @@ function App() {
       </Nav>
     </div>
   );
+=======
+          <Nav.Link href="/solicitudes" className="text-dark">
+            Demanda
+          </Nav.Link>
+        </Nav.Item>
+      </Navbar>
+    </React.Fragment>
+  )
+>>>>>>> af40ea2c9b4f6ce9b39a92ce39f15f8cebeef066:front/src/components/NavigationBar.jsx
 }
 
-export default App;
+export default NavigationBar;

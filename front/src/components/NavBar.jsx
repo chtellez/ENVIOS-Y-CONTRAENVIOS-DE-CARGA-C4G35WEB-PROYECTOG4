@@ -35,6 +35,11 @@ function App() {
             Crear Oferta
           </Nav.Link>
         </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/login" className="text-dark">
+            Iniciar Sesion
+          </Nav.Link>
+        </Nav.Item>
       </Nav>
     </div>
   );

@@ -9,29 +9,37 @@ export default class login extends Component {
         <Container id="login">
           <Row>
             <Col>
-              <h1>Iniciar Sesión</h1>
-            </Col>
+            <Row>
+              <h2>Iniciar Sesión</h2>
+            </Row>
+            <Row>
+              <Col
+              sm= "12"
+              xs= "12"
+              md={{span:4,offset:4}}
+              lg={{ span:4, offset:4}}
+              xl= {{span:4, offset:4}}
+              >
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label> Email</Form.Label>
+                <Form.Label> </Form.Label>
                 <Form.Control type="email" placeholder="Ingrese su email" />
-                <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
-                </Form.Text>
+                
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
+                <Form.Label></Form.Label>
                 <Form.Control type="password" placeholder="Ingrese su contraseña" />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-              </Form.Group>
-              <Button variant="primary" type="submit">
-                Submit
+
+              <Button variant="primary" >
+                Entrar
               </Button>
             </Form>
-          </Row>
+            </Col>
+            </Row>
+            </Col>
+            </Row>
         </Container>
       </div>
     );

@@ -1,12 +1,15 @@
 import React, { Component } from "react";
-import { Container, Row, Form, Button, Col } from "react-bootstrap";
+import { Container, Row, Form, Button, Col, Card } from "react-bootstrap";
 import "../styles/login.css";
 
 export default class login extends Component {
   render() {
     return (
-      <div>
+      <div id="container">
+        <Card id="fondo">
+        
         <Container id="login">
+          
           <Row>
             <Col>
             <Row>
@@ -40,7 +43,10 @@ export default class login extends Component {
             </Row>
             </Col>
             </Row>
+            
         </Container>
+        </Card>
+        
       </div>
     );
   }

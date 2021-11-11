@@ -1,7 +1,13 @@
 #login{
     margin-top: 10%;
+    height: 478px;
 }
 #login-container button{
     width: 100%;
+}
+#fondo{
+    background-color: brown;
+    justify-content: center;
+    
 }
    

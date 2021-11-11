@@ -5,8 +5,8 @@ import "../styles/login.css";
 export default class login extends Component {
   render() {
     return (
-      <div id="container">
-        <Card id="fondo">
+      <div id="container" class="col-12">
+        <Card id="fondo" class="col-12">
         
         <Container id="login">
           
@@ -31,12 +31,12 @@ export default class login extends Component {
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label></Form.Label>
+                <Form.Label><i class="fas fa-sign-out-alt"></i></Form.Label>
                 <Form.Control type="password" placeholder="Ingrese su contraseña" />
               </Form.Group>
 
-              <Button variant="primary" >
-                Entrar
+              <Button variant="primary"> 
+                Ingresar
               </Button>
             </Form>
             </Col>

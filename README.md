@@ -27,6 +27,3 @@ https://www.blobmaker.app
 
 Documentación react-bootstrap:
 https://react-bootstrap.github.io/components/images/?
-
-Documentación react-bootstrap:
-https://react-bootstrap.github.io/components/images/?

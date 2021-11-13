@@ -2,16 +2,23 @@
     margin-top: 10%;
     height: 478px;
 }
-#login-container button{
-    width: 100%;
-}
+
 #fondo{
     background-image: url(../assets/fondo_login.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     justify-content: center;
 }
-#login-container h2{
-    color: white;
+#inicio{
+    color: rgb(0, 0, 0);
+    font-size: xx-small;
+    
+}
+#fondo1{
+    background-color:rgb(151, 146, 146);
+    background-attachment: fixed;
+    
+
+
 }
    

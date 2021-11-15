@@ -1,17 +1,4 @@
 
-.principal{
-    margin-top: 5px;
-    border-radius: 10px;
-}
-.titulis{
-    background: linear-gradient(150deg, #cc4218, #fcc510);
-    border-radius: 10px;
-}
-.editar{
-    margin-left: 90%;
-    margin-bottom: 30px;
-}
-.actualizarbtn{
-    margin-left: 50%;
-    margin-bottom: 30px;
+.buble{
+    position: absolute;
 }

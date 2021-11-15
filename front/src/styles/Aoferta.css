@@ -3,12 +3,12 @@
     padding: 0;
 }
 .contenedor{
-    background-color: rgb(27, 27, 27);
+    background-color: rgb(255, 255, 255);
 }
 
 .cardsita {
-    border-radius: 10px;
-    margin-left: 10px !important;
+    border-radius: 20px !important;
+   
 }
 .cabecera{
     background: #53b7f1;
@@ -20,17 +20,18 @@
     background-color: #ffc200;
 }
 .section{
-    position: relative !important;
-    width: 100vw !important;;
-    height: 100vh !important;;
-    display: flex !important;;
-    justify-content: space-between !important;;
-    align-items: center !important;;
-    padding: 100px !important;;
-    box-sizing: border-box !important;;
-    background: linear-gradient(180deg, #4156cc, #ffc200), url(../assets/img1.jpg) !important;;
-    background-size: cover !important;;
-    background-position: right !important;;
+    position: relative;
+    width: 100vw;
+    padding-top: 20px;
+    /* height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px;
+    box-sizing: border-box; */
+    background: linear-gradient(90deg, #74EBD5, #9FACE6), url(../assets/img1.jpg);
+    background-size: cover;
+    background-position: right;
 
     background-repeat: no-repeat;
     background-blend-mode: screen;
@@ -38,17 +39,23 @@
 .section .content{
     max-width: 700px;
     text-align: center;
+    margin-top: 20%;
 }
 .section .content h2{
-    font-size: 3em;
+    
     color: rgb(10, 10, 10);
 }
 .section .content p{
-    font-size: 1.2em;
+    
     color: rgb(51, 49, 49);
 }
 .wave{
     position: absolute;
     bottom: 0;
     left: 0;
+}
+.section .img{
+    position:relative;
+    max-width: 450px;
+    z-index: 1000;
 }

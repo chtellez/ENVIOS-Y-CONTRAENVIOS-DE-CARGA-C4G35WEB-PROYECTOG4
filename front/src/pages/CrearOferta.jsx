@@ -45,7 +45,7 @@ class CrearOferta extends React.Component {
           <Form>
             <Row>
               <Col>
-                <Form.Group className="mb-3" controlId="Origen">
+                <Form.Group controlId="Origen">
                   <Form.Label>Ciudad Origen</Form.Label>
                   <Form.Select aria-label="Default select example">
                     <option value="1">Medellín</option>

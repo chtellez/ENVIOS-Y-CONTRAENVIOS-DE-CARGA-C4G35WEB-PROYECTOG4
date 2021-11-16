@@ -46,6 +46,12 @@ const NavigationBar = () => {
             Perfil
           </Nav.Link>
         </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/AgregarVehiculo" className="text-dark">
+            Agregar Vehículo
+          </Nav.Link>
+        </Nav.Item>
+
       </Navbar>
     </React.Fragment>
   )

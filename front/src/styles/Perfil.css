@@ -1,4 +1,26 @@
+*{
+    margin:0;
+    padding: 0;
+}
+.texto{
+    font-size: 34px;
+    display: inline-block;
+    color: #000;
+    position: relative;
+    font-weight: bold;
+    left: 260px;
+    z-index: 1000;
+    top: 200px;
+}
+.img1{
+    position: relative !important;
+    max-width: 530px !important;
+    
+    bottom: 400px;
+    z-index: 1000 !important;
+}
 
-.buble{
-    position: absolute;
+.conten{
+   margin-top: 150px;
+    
 }

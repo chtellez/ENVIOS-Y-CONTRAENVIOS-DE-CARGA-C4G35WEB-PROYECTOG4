@@ -29,7 +29,7 @@ export class Login extends React.Component {
         </div>
         <div>
         
-        <p>¿No tienes cuenta? <a href="/">Registrate!</a></p>
+        <p>¿No tienes cuenta? <a href="/register">Registrate!</a></p>
           <button type="button" className="btn">
             Login
           </button>

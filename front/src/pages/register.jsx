@@ -9,23 +9,31 @@ export class Register extends React.Component {
   render() {
     return (
       <div className="base-container" ref={this.props.containerRef}>
-        <div className="header">Register</div>
+        <div className="header">Registrarse</div>
         <div className="content">
           <div className="image">
-            <img src={loginImg} />
+            <img src={loginImg} alt="fondo_register" />
           </div>
           <div className="form">
             <div className="form-group">
-              <label htmlFor="username">Username</label>
-              <input type="text" name="username" placeholder="username" />
+              <label htmlFor="username"></label>
+              <input type="text" name="username" placeholder="Nombre" />
             </div>
             <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input type="text" name="email" placeholder="email" />
+              <label htmlFor="username"></label>
+              <input type="text" name="username" placeholder="Apellido" />
             </div>
             <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input type="text" name="password" placeholder="password" />
+              <label htmlFor="email"></label>
+              <input type="text" name="email" placeholder="Email" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password"></label>
+              <input type="text" name="password" placeholder="Contraseña" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password"></label>
+              <input type="text" name="password" placeholder="Confirma tu contraseña" />
             </div>
           </div>
         </div>
@@ -38,3 +46,4 @@ export class Register extends React.Component {
     );
   }
 }
+export default Register;

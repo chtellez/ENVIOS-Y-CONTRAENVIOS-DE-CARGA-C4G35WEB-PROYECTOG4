@@ -8,16 +8,13 @@
     color: #000;
     position: relative;
     font-weight: bold;
-    left: 260px;
+    left: 220px;
     z-index: 1000;
     top: 200px;
 }
 .img1{
     position: relative !important;
-    max-width: 530px !important;
-    
-    bottom: 400px;
-    z-index: 1000 !important;
+    max-width: 600px;
 }
 
 .conten{

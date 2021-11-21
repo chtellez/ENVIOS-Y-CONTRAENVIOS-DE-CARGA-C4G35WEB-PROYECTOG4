@@ -14,9 +14,8 @@
     background: #53b7f1;
     border-radius: 10px;
 }
-.pagar{
-    position: relative;
-    margin-left: 80px;
+#pagar{
+    display: block;
     background-color: #ffc200;
 }
 .section{
@@ -29,7 +28,7 @@
     align-items: center;
     padding: 100px;
     box-sizing: border-box; */
-    background: linear-gradient(90deg, #74EBD5, #9FACE6), url(../assets/img1.jpg);
+    background: linear-gradient(180deg, rgb(216, 227, 232), #489abd), url(../assets/img1.jpg);
     background-size: cover;
     background-position: right;
 

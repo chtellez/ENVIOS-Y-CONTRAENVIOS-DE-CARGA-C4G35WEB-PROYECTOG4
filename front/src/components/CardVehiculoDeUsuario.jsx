@@ -1,7 +1,8 @@
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, ListGroup } from "react-bootstrap";
 import React, { useState } from 'react';
 import ReactDOM, { render } from 'react-dom';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import "../styles/AgregarVehiculo.css";
 
 class CardVehiculoDeUsuario extends React.Component {
   constructor(props) {
@@ -10,19 +11,25 @@ class CardVehiculoDeUsuario extends React.Component {
   render() {
     return (
       <Card>
-        <Card.Header>Featured</Card.Header>
+        <Card.Header ><strong>Camión Chevrolet 20 Toneladas</strong> </Card.Header>
         <Card.Body>
-          <Card.Title>Special title treatment</Card.Title>
+          {/* <Card.Title>Tipo: Camión 20 Toneladas</Card.Title> */}
           <Card.Text>
-            With supporting text below as a natural lead-in to additional content.
+            Vehículo adecuado para transporte de ganado y cerdos.
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <ul>
+            <li><strong>Tipo Carga: </strong>{this.props.TipoCarga}</li>
+            <li><strong>Placa: </strong>{this.props.Placa}</li>
+            <li><strong>Capacidad: </strong>{this.props.Capacidad}</li>
+          </ul>
+          <Button variant="danger"
+             onClick={this.props.AlClick}> Eliminar
+             </Button>
+          
         </Card.Body>
+
       </Card>
     );
   }
 }
-
-export default CardVehiculoDeUsuario
-
-
+export default CardVehiculoDeUsuario;

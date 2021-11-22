@@ -47,7 +47,7 @@ const NavigationBar = () => {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/AgregarVehiculo" className="text-dark">
+          <Nav.Link href="/PagAgregarVehiculo" className="text-dark">
             Agregar Vehículo
           </Nav.Link>
         </Nav.Item>

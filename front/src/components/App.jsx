@@ -5,7 +5,7 @@ import { library } from "@fortawesome/fontawesome-svg-core/"
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faUser, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck } from "@fortawesome/free-solid-svg-icons"
 
-import AgregarVehiculo from "../pages/AgregarVehiculo";
+import PagAgregarVehiculo from "../pages/PagAgregarVehiculo";
 import Layout from './Layout'
 import NavigationBar from "./NavigationBar";
 import Home from "../pages/Home";
@@ -35,7 +35,7 @@ function App() {
             <Route exact path="/solicitudes" element={<SolicitudesCarga />}></Route>
             <Route exact path="/aceptar_oferta" element={<AceptarOferta />}></Route>
             <Route exact path="/perfil" element={<Perfil />}></Route>
-            <Route exact path="/AgregarVehiculo" element={<AgregarVehiculo/>}></Route>
+            <Route exact path="/PagAgregarVehiculo" element={<PagAgregarVehiculo/>}></Route>
           </Routes>
         </BrowserRouter>
       </Layout>

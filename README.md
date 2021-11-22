@@ -23,6 +23,9 @@ https://www.blobmaker.app
 Documentación react-bootstrap:
 https://react-bootstrap.github.io/components/images/?
 
+Iconos:
+https://fontawesome.com/v5.15/icons?d=gallery&p=2&q=u
+
 Analizador estructuras de HTML:
 https://validator.w3.org/nu
 
@@ -31,3 +34,5 @@ https://css-tricks.com/guides/
 
 Mapas gratuitos:
 https://www.openstreetmap.org/#map=5/4.632/-74.299
+
+

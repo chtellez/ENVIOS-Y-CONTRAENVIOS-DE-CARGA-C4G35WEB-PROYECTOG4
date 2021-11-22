@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../styles/Aoferta.css";
-import {  Row, Col, Card, Accordion, Button } from "react-bootstrap";
+import { Row, Col, Card, Accordion, Button } from "react-bootstrap";
 
 export default class AceptarOferta extends Component {
   render() {
@@ -59,7 +59,7 @@ export default class AceptarOferta extends Component {
                               Contraoferta de transportista
                             </Card.Subtitle>
                             <Card.Text>uwu</Card.Text>
-                            <Button variant="warning"ClassName="pagar" href="#">
+                            <Button variant="warning" ClassName="pagar" href="#">
                               Pagar
                             </Button>
                           </Card.Body>
@@ -71,7 +71,7 @@ export default class AceptarOferta extends Component {
               </Card.Body>
             </Card>
           </Col>
-          
+
         </Row>
       </div>
     );

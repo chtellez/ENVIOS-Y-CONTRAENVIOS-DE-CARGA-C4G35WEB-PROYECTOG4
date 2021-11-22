@@ -1,18 +1,7 @@
 import React from "react";
 import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
-
-/*
-import PropTypes from "prop-types";
-
-const C_CrearOferta = props => {
-    return         <div></div>
-}
-
-C_CrearOferta.prototypes = {
-
-}
-
-export default C_CrearOferta*/
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import "../styles/CrearOferta.css";
 
 class CrearOferta extends React.Component {
   constructor(props) {
@@ -39,13 +28,15 @@ class CrearOferta extends React.Component {
       <>
         <Container>
           <Image
-            src="https://placeimg.com/1000/400/tech"
+            src="https://placeimg.com/800/250/tech"
             className="mx-auto d-block"
           />
-          <Form>
+          <Form className="margen-form">
             <Row>
-              <Col>
-                <Form.Group className="mb-3" controlId="Origen">
+              <Col xs={0} lg={2}  >
+              </Col>
+              <Col xs={4} lg={3}>
+                <Form.Group controlId="Origen">
                   <Form.Label>Ciudad Origen</Form.Label>
                   <Form.Select aria-label="Default select example">
                     <option value="1">Medellín</option>
@@ -55,7 +46,10 @@ class CrearOferta extends React.Component {
                   </Form.Select>
                 </Form.Group>
               </Col>
-              <Col>
+              <Col xs={4} lg={2} className="icono">
+                <FontAwesomeIcon icon={'arrow-right'} size="3x" />
+              </Col>
+              <Col xs={4} lg={3}>
                 <Form.Group className="mb-3" controlId="Destino">
                   <Form.Label>Ciudad Destino</Form.Label>
                   <Form.Select aria-label="Default select example">
@@ -66,9 +60,13 @@ class CrearOferta extends React.Component {
                   </Form.Select>
                 </Form.Group>
               </Col>
+              <Col xs={0} lg={2}  >
+              </Col>
             </Row>
             <Row>
-              <Col>
+              <Col xs={0} lg={2}  >
+              </Col>
+              <Col >
                 <Form.Group controlId="Largo">
                   <Form.Label>Largo</Form.Label>
                   <Form.Range />
@@ -84,18 +82,27 @@ class CrearOferta extends React.Component {
                 <Form.Group controlId="Alto">
                   <Form.Label>Alto</Form.Label>
                   <Form.Range />
+                  
                 </Form.Group>
+              </Col>
+              <Col xs={0} lg={2}  >
               </Col>
             </Row>
             <Row>
+              <Col xs={0} lg={2}  >
+              </Col>
               <Col>
                 <Form.Group controlId="Peso">
                   <Form.Label>Peso aproximado</Form.Label>
                   <Form.Range />
                 </Form.Group>
               </Col>
+              <Col xs={6}  >
+              </Col>
             </Row>
             <Row>
+              <Col xs={0} lg={2}  >
+              </Col>
               <Col>
                 <Form.Group className="mb-3" controlId="Tipo">
                   <Form.Label>Tipo de carga</Form.Label>
@@ -116,11 +123,22 @@ class CrearOferta extends React.Component {
                   </Form.Text>
                 </Form.Group>
               </Col>
+              <Col xs={0} lg={2}  >
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={0} lg={2}  >
+              </Col>
+              <Col>
+                <Button variant="secondary" type="submit">
+                  Publicar solicitud
+                </Button>
+              </Col>
+              <Col xs={0} lg={2}  >
+              </Col>
             </Row>
           </Form>
-          <Button variant="secondary" type="submit">
-            Publicar solicitud
-          </Button>
+
         </Container>
       </>
     );

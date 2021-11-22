@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import "../styles/Aoferta.css";
+<<<<<<< HEAD
 import { Row, Col, Card, Accordion, Button, Modal,} from "react-bootstrap";
 import img from "../assets/Hand-Truck.svg";
+=======
+import { Row, Col, Card, Accordion, Button } from "react-bootstrap";
+>>>>>>> ae5d7cc733e8a44546720e1f94351b8b2717845e
 
 function AceptarOferta() {
   const [show, setShow] = useState(false);
@@ -90,6 +94,7 @@ function AceptarOferta() {
                             <Card.Subtitle className="mb-2 text-muted">
                               Fecha y Hora
                             </Card.Subtitle>
+<<<<<<< HEAD
                             <Card.Text>Precio</Card.Text>
                             <Button
                               variant="warning"
@@ -97,6 +102,23 @@ function AceptarOferta() {
                               href="#"
                               onClick={handleShow}
                             >
+=======
+                            <Card.Text>uwu</Card.Text>
+                            <Button ClassName="justify-content-end" href="#">
+                              Pagar
+                            </Button>
+                          </Card.Body>
+                        </Card>
+                        <br></br>
+                        <Card style={{ width: "auto" }}>
+                          <Card.Header>Propuesta 1</Card.Header>
+                          <Card.Body>
+                            <Card.Subtitle className="mb-2 text-muted">
+                              Contraoferta de transportista
+                            </Card.Subtitle>
+                            <Card.Text>uwu</Card.Text>
+                            <Button variant="warning" ClassName="pagar" href="#">
+>>>>>>> ae5d7cc733e8a44546720e1f94351b8b2717845e
                               Pagar
                             </Button>
                           </Card.Body>
@@ -108,6 +130,10 @@ function AceptarOferta() {
               </Card.Body>
             </Card>
           </Col>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ae5d7cc733e8a44546720e1f94351b8b2717845e
         </Row>
 
         <Modal

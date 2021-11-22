@@ -3,8 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { library } from "@fortawesome/fontawesome-svg-core/"
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck } from "@fortawesome/free-solid-svg-icons"
+import { faArrowRight, faUser, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck } from "@fortawesome/free-solid-svg-icons"
 
+import PagAgregarVehiculo from "../pages/PagAgregarVehiculo";
 import Layout from './Layout'
 import NavigationBar from "./NavigationBar";
 import Home from "../pages/Home";
@@ -15,7 +16,7 @@ import Footer from "./Footer";
 import SolicitudesCarga from "../pages/SolicitudesCarga";
 
 
-library.add(fab, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck)
+library.add( faArrowRight, faUser, fab, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck)
 
 
 // import CrearOferta from "../pages/CrearOferta";
@@ -34,6 +35,7 @@ function App() {
             <Route exact path="/solicitudes" element={<SolicitudesCarga />}></Route>
             <Route exact path="/aceptar_oferta" element={<AceptarOferta />}></Route>
             <Route exact path="/perfil" element={<Perfil />}></Route>
+            <Route exact path="/PagAgregarVehiculo" element={<PagAgregarVehiculo/>}></Route>
           </Routes>
         </BrowserRouter>
       </Layout>

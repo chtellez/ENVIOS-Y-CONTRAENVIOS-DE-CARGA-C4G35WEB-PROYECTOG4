@@ -14,17 +14,10 @@ padding-top: 30px;
   margin-top: 10px;
 }
 
-/* .paddin-row{
-  padding-top: 40px;
-  padding-bottom: 40px;
-} */
-
 .fondo-primario{
-  /* background: radial-gradient(circle at top left, #c9c9c9, #a8daf0); */
   background: #c9c9c9;
 }
 
 .fondo-secundario{
-  /* background: radial-gradient(circle at top left, #c9c9c9, #a8daf0); */
   background: #a8daf0;
 }

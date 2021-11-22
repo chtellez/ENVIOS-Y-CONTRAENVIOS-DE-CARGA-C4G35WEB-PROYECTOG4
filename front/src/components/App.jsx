@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { library } from "@fortawesome/fontawesome-svg-core/"
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faUser, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck } from "@fortawesome/free-solid-svg-icons"
+import { faArrowRight, faUser, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck } from "@fortawesome/free-solid-svg-icons"
 
 import PagAgregarVehiculo from "../pages/PagAgregarVehiculo";
 import Layout from './Layout'
@@ -16,7 +16,7 @@ import Footer from "./Footer";
 import SolicitudesCarga from "../pages/SolicitudesCarga";
 
 
-library.add(faUser, fab, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck)
+library.add( faArrowRight, faUser, fab, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck)
 
 
 // import CrearOferta from "../pages/CrearOferta";

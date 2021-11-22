@@ -30,7 +30,7 @@ class PagAgregarVehiculo extends React.Component {
 
   CardConColumna(i) {
     return (
-      <Col xs={12} sm={12} lg={6}>
+      <Col xs={12} sm={12} lg={12}>
         <CardVehiculoDeUsuario
           TipoCarga={this.state.StsVehiculos[i].TipoCarga}
           Placa={this.state.StsVehiculos[i].Placa}

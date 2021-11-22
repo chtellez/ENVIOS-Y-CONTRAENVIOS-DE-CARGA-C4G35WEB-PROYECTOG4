@@ -1,0 +1,24 @@
+.icono {
+  text-align: center;
+  margin-top: 18px;
+}
+
+.margen-form {
+  margin-top: 70px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 30px;
+}
+
+.margen-icono {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.fondo-primario {
+  background: #c9c9c9;
+}
+
+/* .fondo-secundario{
+    background: #a8daf0;
+  } */

@@ -11,7 +11,7 @@ import NavigationBar from "./NavigationBar";
 import Home from "../pages/Home";
 import CrearOferta from "../pages/CrearOferta";
 import AceptarOferta from "../pages/AceptarOferta";
-import Perfil from "../pages/Perfil";
+import Perfil from "../pages/Perfil.jsx";
 import Footer from "./Footer";
 import SolicitudesCarga from "../pages/SolicitudesCarga";
 

@@ -3,32 +3,32 @@
     padding: 0;
 }
 .contenedor{
-    background-color: rgb(27, 27, 27);
+    background-color: rgb(255, 255, 255);
 }
 
 .cardsita {
-    border-radius: 10px;
-    margin-left: 10px !important;
+    border-radius: 20px !important;
+   
 }
 .cabecera{
     background: #53b7f1;
     border-radius: 10px;
 }
-.pagar{
-    position: relative;
-    margin-left: 80px;
+#pagar{
+    display: block;
     background-color: #ffc200;
 }
 .section{
     position: relative;
-    width: 100%;
-    height: 100vh;
+    width: 100vw;
+    padding-top: 20px;
+    /* height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 100px;
-    box-sizing: border-box;
-    background: linear-gradient(180deg, #4156cc, #ffc200), url(../assets/img1.jpg);
+    box-sizing: border-box; */
+    background: linear-gradient(180deg, rgb(216, 227, 232), #489abd), url(../assets/img1.jpg);
     background-size: cover;
     background-position: right;
 
@@ -38,17 +38,23 @@
 .section .content{
     max-width: 700px;
     text-align: center;
+    margin-top: 20%;
 }
 .section .content h2{
-    font-size: 3em;
+    
     color: rgb(10, 10, 10);
 }
 .section .content p{
-    font-size: 1.2em;
+    
     color: rgb(51, 49, 49);
 }
 .wave{
     position: absolute;
     bottom: 0;
     left: 0;
+}
+.section .img{
+    position:relative;
+    max-width: 450px;
+    z-index: 1000;
 }

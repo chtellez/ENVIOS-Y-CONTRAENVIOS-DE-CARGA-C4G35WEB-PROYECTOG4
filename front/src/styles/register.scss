@@ -9,9 +9,9 @@
       font-family: "Open Sans", sans-serif;
     }
   
-    .content {
+    .contents{
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
   
       .image {
         width: 18em;
@@ -29,7 +29,7 @@
   
         .form-group {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           align-items: flex-start;
           width: fit-content;
           label {
@@ -52,9 +52,9 @@
               //box-shadow: 0px 0px 14px 0.3px #0e81ce96;
             //}
   
-            &:focus {
+          &:focus {
               outline: none;
-              box-shadow: 0px 0px 12px 0.8px #3474dbb2;
+                box-shadow: 0px 0px 12px 0.8px #3474dbb2;
             }
           }
         }

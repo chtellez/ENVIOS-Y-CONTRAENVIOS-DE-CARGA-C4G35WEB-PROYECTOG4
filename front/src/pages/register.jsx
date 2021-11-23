@@ -1,5 +1,6 @@
 import React from "react";
-import loginImg from "../assets/login.svg";
+import registerImg from "../assets/register_img.svg";
+import "../styles/register.scss";
 
 export class Register extends React.Component {
   constructor(props) {
@@ -9,10 +10,11 @@ export class Register extends React.Component {
   render() {
     return (
       <div className="base-container" ref={this.props.containerRef}>
+        <br />
         <div className="header">Registrarse</div>
-        <div className="content">
+        <div className="contents">
           <div className="image">
-            <img src={loginImg} alt="fondo_register" />
+            <img src={registerImg} alt="fondo_register" />
           </div>
           <div className="form">
             <div className="form-group">
@@ -39,8 +41,9 @@ export class Register extends React.Component {
         </div>
         <div className="footer">
           <button type="button" className="btn">
-            Register
+            Enviar
           </button>
+          <br /><br /><br /><br /><br /><br />
         </div>
       </div>
     );

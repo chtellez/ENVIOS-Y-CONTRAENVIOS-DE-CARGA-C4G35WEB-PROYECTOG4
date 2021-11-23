@@ -30,7 +30,7 @@ class PagAgregarVehiculo extends React.Component {
 
   CardConColumna(i) {
     return (
-      <Col xs={12} sm={12} lg={12}>
+      <Col xs={12} sm={12} lg={12} className="mb-3 my-3">
         <CardVehiculoDeUsuario
           TipoCarga={this.state.StsVehiculos[i].TipoCarga}
           Placa={this.state.StsVehiculos[i].Placa}
@@ -43,21 +43,25 @@ class PagAgregarVehiculo extends React.Component {
   render() {
     return (
       <>
-        <Container fluid className="margen-relleno">
-          <Row >
-            <Col xs={12} sm={4} lg={3} >
+        <Container fluid >
+          <Row className="margen-relleno">
+            <Col xs={0} sm={0} lg={1} >
+            </Col>
+            <Col xs={12} sm={4} lg={4} >
               <div className="icono">
-                <FontAwesomeIcon icon={'user'} size="4x" className="margen-icono"/>
+                <FontAwesomeIcon icon={'user'} size="4x" className="margen-icono" />
                 <p>Nombre Conductor</p>
               </div>
               <hr />
               <FormNuevoVehiculo />
             </Col>
-            <Col xs={12} sm={8} lg={9}>
+            <Col xs={12} sm={8} lg={6}>
               <Row>
                 {this.CardConColumna(0)}
                 {this.CardConColumna(1)}
               </Row>
+            </Col>
+            <Col xs={0} sm={0} lg={1} >
             </Col>
           </Row>
         </Container>

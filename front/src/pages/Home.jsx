@@ -5,9 +5,8 @@ const Home = () => {
   return (
     <img
       src={fondopg}
-      className="App-fondo vh-100"
+      className="App-fondo vh-100 vw-100"
       alt="fondo"
-      style={{ width: "100%", height: "700px" }}
     />
   );
 };

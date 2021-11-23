@@ -1,0 +1,23 @@
+*{
+    margin:0;
+    padding: 0;
+}
+.texto{
+    font-size: 34px;
+    display: inline-block;
+    color: #000;
+    position: relative;
+    font-weight: bold;
+    left: 220px;
+    z-index: 1000;
+    top: 200px;
+}
+.img1{
+    position: relative !important;
+    max-width: 600px;
+}
+
+.conten{
+   margin-top: 150px;
+    
+}

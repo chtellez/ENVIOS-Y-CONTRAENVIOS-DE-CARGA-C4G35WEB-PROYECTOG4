@@ -14,7 +14,7 @@ const database = require("./config/database");
 const app = express();
 
 app.use(cors());
-app.use(auth)
+// app.use(auth)
 app.use(logger('tiny'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

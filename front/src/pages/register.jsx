@@ -9,7 +9,7 @@ export class Register extends React.Component {
 
   render() {
     return (
-      <div className="base-container" ref={this.props.containerRef}>
+      <div className="base-container">
         <br />
         <div className="header">Registrarse</div>
         <div className="contents">

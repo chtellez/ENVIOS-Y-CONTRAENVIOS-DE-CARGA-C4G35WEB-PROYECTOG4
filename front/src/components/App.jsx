@@ -3,19 +3,28 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { library } from "@fortawesome/fontawesome-svg-core/"
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faUser, faShippingFast, faPeopleCarry,faAddressCard,faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck } from "@fortawesome/free-solid-svg-icons"
 
+import { faUser, faArrowRight, faShippingFast, faPeopleCarry,faAddressCard,faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck } from "@fortawesome/free-solid-svg-icons"
+
+
+
+import PagAgregarVehiculo from "../pages/PagAgregarVehiculo";
 import Layout from './Layout'
 import NavigationBar from "./NavigationBar";
 import Home from "../pages/Home";  
 import CrearOferta from "../pages/CrearOferta";
 import AceptarOferta from "../pages/AceptarOferta"; 
 import Perfil from "../pages/Perfil";
+import InicioSesion from "../pages/login";
+import Register from "../pages/register"
+import AceptarOferta from "../pages/AceptarOferta";
+import Perfil from "../pages/Perfil.jsx";
 import Footer from "./Footer";
 import SolicitudesCarga from "../pages/SolicitudesCarga";
 
 
-library.add(fab, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck, faAddressCard, faPeopleCarry, faShippingFast, faUser)
+library.add(fab, faArrowRight, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck, faAddressCard, faPeopleCarry, faShippingFast, faUser)
+
 
 
 // import CrearOferta from "../pages/CrearOferta";
@@ -33,7 +42,10 @@ function App() {
             <Route exact path="/crear_oferta" element={<CrearOferta />}></Route>
             <Route exact path="/solicitudes" element={<SolicitudesCarga />}></Route>
             <Route exact path="/aceptar_oferta" element={<AceptarOferta />}></Route>
+            <Route exact path="/login" element={<InicioSesion />}></Route>
+            <Route exact path="/register" element={<Register />}></Route>
             <Route exact path="/perfil" element={<Perfil />}></Route>
+            <Route exact path="/PagAgregarVehiculo" element={<PagAgregarVehiculo/>}></Route>
           </Routes>
         </BrowserRouter>
       </Layout>

@@ -51,6 +51,11 @@ const NavigationBar = () => {
             Agregar Vehículo
           </Nav.Link>
         </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/login" className="text-dark">
+            Iniciar Sesion
+          </Nav.Link>
+        </Nav.Item>
 
       </Navbar>
     </React.Fragment>

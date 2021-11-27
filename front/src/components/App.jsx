@@ -11,16 +11,15 @@ import { faUser, faArrowRight, faShippingFast, faPeopleCarry,faAddressCard,faHom
 import PagAgregarVehiculo from "../pages/PagAgregarVehiculo";
 import Layout from './Layout'
 import NavigationBar from "./NavigationBar";
-import Home from "../pages/Home";  
+import Home from "../pages/Home";
 import CrearOferta from "../pages/CrearOferta";
-import AceptarOferta from "../pages/AceptarOferta"; 
+import AceptarOferta from "../pages/AceptarOferta";
 import Perfil from "../pages/Perfil";
 import InicioSesion from "../pages/login";
 import Register from "../pages/register"
-import AceptarOferta from "../pages/AceptarOferta";
-import Perfil from "../pages/Perfil.jsx";
 import Footer from "./Footer";
 import SolicitudesCarga from "../pages/SolicitudesCarga";
+import AuthContextProvider from "../context/AuthContext";
 
 
 library.add(fab, faArrowRight, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck, faAddressCard, faPeopleCarry, faShippingFast, faUser)
@@ -32,26 +31,28 @@ library.add(fab, faArrowRight, faHome, faListAlt, faBuilding, faTruckMoving, faS
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <NavigationBar></NavigationBar>
-      </header>
-      <Layout>
-        <BrowserRouter>
-          <Routes>
-            <Route exact path="/" element={<Home />}></Route>
-            <Route exact path="/crear_oferta" element={<CrearOferta />}></Route>
-            <Route exact path="/solicitudes" element={<SolicitudesCarga />}></Route>
-            <Route exact path="/aceptar_oferta" element={<AceptarOferta />}></Route>
-            <Route exact path="/login" element={<InicioSesion />}></Route>
-            <Route exact path="/register" element={<Register />}></Route>
-            <Route exact path="/perfil" element={<Perfil />}></Route>
-            <Route exact path="/PagAgregarVehiculo" element={<PagAgregarVehiculo/>}></Route>
-          </Routes>
-        </BrowserRouter>
-      </Layout>
-      <footer>
-        <Footer/>
-      </footer>
+      <AuthContextProvider>
+        <header className="App-header">
+          <NavigationBar></NavigationBar>
+        </header>
+        <Layout>
+          <BrowserRouter>
+            <Routes>
+              <Route exact path="/" element={<Home />}></Route>
+              <Route exact path="/crear_oferta" element={<CrearOferta />}></Route>
+              <Route exact path="/solicitudes" element={<SolicitudesCarga />}></Route>
+              <Route exact path="/aceptar_oferta" element={<AceptarOferta />}></Route>
+              <Route exact path="/login" element={<InicioSesion />}></Route>
+              <Route exact path="/register" element={<Register />}></Route>
+              <Route exact path="/perfil" element={<Perfil />}></Route>
+              <Route exact path="/PagAgregarVehiculo" element={<PagAgregarVehiculo/>}></Route>
+            </Routes>
+          </BrowserRouter>
+        </Layout>
+        <footer>
+          <Footer/>
+        </footer>
+      </AuthContextProvider>
     </div>
   );
 }

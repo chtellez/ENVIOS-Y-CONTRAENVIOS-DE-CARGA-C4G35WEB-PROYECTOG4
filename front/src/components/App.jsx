@@ -3,19 +3,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { library } from "@fortawesome/fontawesome-svg-core/"
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck } from "@fortawesome/free-solid-svg-icons"
+import { faUser, faShippingFast, faPeopleCarry,faAddressCard,faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck } from "@fortawesome/free-solid-svg-icons"
 
 import Layout from './Layout'
 import NavigationBar from "./NavigationBar";
-import Home from "../pages/Home";
+import Home from "../pages/Home";  
 import CrearOferta from "../pages/CrearOferta";
-import AceptarOferta from "../pages/AceptarOferta";
+import AceptarOferta from "../pages/AceptarOferta"; 
 import Perfil from "../pages/Perfil";
 import Footer from "./Footer";
 import SolicitudesCarga from "../pages/SolicitudesCarga";
 
 
-library.add(fab, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck)
+library.add(fab, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck, faAddressCard, faPeopleCarry, faShippingFast, faUser)
 
 
 // import CrearOferta from "../pages/CrearOferta";

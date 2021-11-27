@@ -1,51 +1,56 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav } from "react-bootstrap";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import logo from "../Img/logo.png";
+import { Card, Col} from  "react-bootstrap"
 import "../styles/NavigationBar.css";
 
+
 const NavigationBar = () => {
+  const [show, setShow] = useState(false);
+  const verMenu = ()=>{
+    setShow(!show)
+  };
+  const [transportista, setTransportista] = useState(false);
+  const estadoTransportista = ()=>{
+    setTransportista(!transportista)
+  };
+
   return (
     <React.Fragment>
       <Navbar fixed="top" className="NavigationBar justify-content-end " collapseOnSelect >
+
+        <Col className="d-flex" style={{width:"30px", height:"30px"}} id="logo">
+          <div  className="col-12 col-sm-5 col-md-4 col-lg-2"><Card.Img src={logo} id="pocion" style={{width:"30px", height:"30px"}} ></Card.Img></div>
+        </Col>
         <Nav.Item>
-          <Nav.Link href="/inicio" className="text-dark">
-            Nosotros
-          </Nav.Link>
+        <Nav.Link href="/"  className="text-dark"><FontAwesomeIcon icon={'home'} size="sm"/> Home</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/aceptar_Oferta" className="text-dark">
-            Aceptar Oferta
-          </Nav.Link>
+        <Nav.Link href="#hipervinculo"  className="text-dark"><FontAwesomeIcon icon={'address-card'} size="sm"/> Contacto</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="link-2" className="text-dark">
-            PQRS
-          </Nav.Link>
+        <Nav.Link href="/aceptar_oferta"   className={'text-dark ' + (show?transportista|| '':"d-none")}><FontAwesomeIcon icon={'vote-yea'} size="sm"/> Aceptar Oferta</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link className="text-dark">Contacto</Nav.Link>
+        <Nav.Link href="/crear_oferta"  className={'text-dark ' + (show?'': transportista?"":"d-none")}><FontAwesomeIcon icon={'shipping-fast'} size="sm"/> Crear Oferta</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/" className="text-dark">
-            Home
-          </Nav.Link>
+        <Nav.Link href="/solicitudes"   className={'text-dark ' + (show?'': transportista?"":"d-none")}><FontAwesomeIcon icon={'people-carry'} size="sm"/> Demanda</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/crear_oferta" className="text-dark">
-            Crear Oferta
-          </Nav.Link>
+        <Nav.Link href="/perfil"  className={'text-dark ' + (show?'': 'd-none')}><FontAwesomeIcon icon={'user'} size="sm"/> Perfil</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/solicitudes" className="text-dark">
-            Demanda
-          </Nav.Link>
+        <Nav.Link  className="text-dark" onClick={verMenu}><FontAwesomeIcon icon={'sign-in-alt'} size="lg"/> {show?'Cerrar sesion':'Iniciar sesion'}</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/perfil" className="text-dark">
-            Perfil
-          </Nav.Link>
+        <Nav.Link  className={'text-dark ' + (show?'': 'd-none')} onClick={estadoTransportista}><FontAwesomeIcon icon={'sign-in-alt'} size="lg"/> {transportista?'Transportista':'Cliente'}</Nav.Link>
         </Nav.Item>
+        {/* <Nav.Item>
+        <Nav.Link href="/"  className="text-dark"><FontAwesomeIcon icon={''} size="lg"/> Cerrar sesion</Nav.Link>
+        </Nav.Item> */}
       </Navbar>
     </React.Fragment>
   )

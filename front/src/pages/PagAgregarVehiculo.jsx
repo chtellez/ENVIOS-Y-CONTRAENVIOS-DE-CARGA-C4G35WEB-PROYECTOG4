@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
+import Axios from 'axios'
+import { Col, Container, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import "../styles/Perfil.css";
 import "../styles/AgregarVehiculo.css";
@@ -10,34 +11,47 @@ class PagAgregarVehiculo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      StsVehiculos: [
-        {
-          TipoCarga: "Leche",
-          Placa: "EPQ-694",
-          Capacidad: "1 tonelada"
-        }, {
-          TipoCarga: "Ferroníquel",
-          Placa: "LPR-733",
-          Capacidad: "8 toneladas"
-        }
-      ]
+      StsVehiculos: []
     }
+    this.CargaVehiculosBD()
+  }
+
+  async CargaVehiculosBD() {
+    await Axios.get('api/vehiculo/todos')
+      .then(response => {
+        console.log(response.data["body"]);
+        this.setState(
+          {
+            StsVehiculos: response.data["body"],
+          })
+      })
+      .catch(e => {
+        console.log(e);
+      })
+  }
+
+  ManejadorAgregar(){
+
   }
 
   ManejadorEliminar(id) {
     console.log("Botón eliminar id:" + id);
   }
 
-  CardConColumna(i) {
+  RenderizarVehiculos() {
     return (
-      <Col xs={12} sm={12} lg={12} className="mb-3 my-3">
-        <CardVehiculoDeUsuario
-          TipoCarga={this.state.StsVehiculos[i].TipoCarga}
-          Placa={this.state.StsVehiculos[i].Placa}
-          Capacidad={this.state.StsVehiculos[i].Capacidad}
-          AlClick={() => this.ManejadorEliminar(i)} />
-      </Col>
-    )
+      this.state.StsVehiculos.map((vehiculo) => {
+        return (
+          <Col xs={12} sm={12} lg={12} className="mb-3 my-3">
+            <CardVehiculoDeUsuario
+              TipoCarga={vehiculo.tipoCarga}
+              Placa={vehiculo.placa}
+              Capacidad={vehiculo.capacidad}
+              AlClick={() => this.ManejadorEliminar()} />
+          </Col>
+        );
+      })
+    );
   }
 
   render() {
@@ -53,12 +67,13 @@ class PagAgregarVehiculo extends React.Component {
                 <p>Nombre Conductor</p>
               </div>
               <hr />
-              <FormNuevoVehiculo />
+
+              <FormNuevoVehiculo/>
+
             </Col>
             <Col xs={12} sm={8} lg={6}>
               <Row>
-                {this.CardConColumna(0)}
-                {this.CardConColumna(1)}
+                {this.RenderizarVehiculos()}
               </Row>
             </Col>
             <Col xs={0} sm={0} lg={1} >
@@ -69,15 +84,5 @@ class PagAgregarVehiculo extends React.Component {
     );
   }
 }
-
-// class Holder extends React.Component{
-//   constructor(props){
-//     super(props);
-//     this.state = {
-//       // const car = {type:"Fiat", model:"500", color:"white"};
-//       stsVehiculos: Array[0],
-//     }
-//   }
-// }
 
 export default PagAgregarVehiculo;

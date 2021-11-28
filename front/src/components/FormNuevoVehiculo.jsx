@@ -1,7 +1,5 @@
-import { Button, Card, Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import React, { useState } from 'react';
-import ReactDOM, { render } from 'react-dom';
-import PropTypes from 'prop-types'
 
 class FormNuevoVehiculo extends React.Component {
   constructor(props) {
@@ -10,6 +8,10 @@ class FormNuevoVehiculo extends React.Component {
 
   ManejadorBtnAgregar() {
     console.log("Se presionó agregar");
+  }
+
+  ManejadorBtnActualizar() {
+    console.log("Se presionó actualizar");
   }
 
   render() {

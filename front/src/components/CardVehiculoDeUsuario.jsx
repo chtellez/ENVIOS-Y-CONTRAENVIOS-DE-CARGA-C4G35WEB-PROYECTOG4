@@ -1,7 +1,5 @@
-import { Button, Card, ListGroup } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import React, { useState } from 'react';
-import ReactDOM, { render } from 'react-dom';
-import PropTypes from 'prop-types';
 import "../styles/AgregarVehiculo.css";
 
 class CardVehiculoDeUsuario extends React.Component {

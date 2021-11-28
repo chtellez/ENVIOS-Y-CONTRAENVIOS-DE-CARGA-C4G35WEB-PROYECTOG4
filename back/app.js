@@ -7,7 +7,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyparser = require ('body-parser')
 const logger = require('morgan');
-var auth = require("./auth/main_auth")
+// var auth = require("./auth/main_auth")
 
 //Immportamos la configuracion de la base de datos
 const database = require("./config/database");

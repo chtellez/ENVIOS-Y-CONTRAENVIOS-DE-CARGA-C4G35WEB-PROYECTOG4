@@ -13,59 +13,6 @@ const NavigationBar = () => {
 
   return (
     <React.Fragment>
-<<<<<<< HEAD
-      <Navbar fixed="top" className="NavigationBar justify-content-end " collapseOnSelect >
-        <Nav.Item>
-          <Nav.Link href="/inicio" className="text-dark">
-            Nosotros
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/aceptar_Oferta" className="text-dark">
-            Aceptar Oferta
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-2" className="text-dark">
-            PQRS
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link className="text-dark">Contacto</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/" className="text-dark">
-            Home
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/crear_oferta" className="text-dark">
-            Crear Oferta
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/solicitudes" className="text-dark">
-            Demanda
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/perfil" className="text-dark">
-            Perfil
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/PagAgregarVehiculo" className="text-dark">
-            Agregar Vehículo
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/login" className="text-dark">
-            Iniciar Sesion
-          </Nav.Link>
-        </Nav.Item>
-
-      </Navbar>
-=======
           <Navbar fixed="top" className="NavigationBar justify-content-end " collapseOnSelect >
 
           <Col className="d-flex" style={{width:"30px", height:"30px"}} id="logo">
@@ -104,7 +51,6 @@ const NavigationBar = () => {
           </Nav.Item>
 
         </Navbar>
->>>>>>> 92dd9025ccf11582032e1062a8363ab2c76fdd48
     </React.Fragment>
   )
 }

@@ -89,74 +89,131 @@ export default function RegistrarUsuario() {
             </Col>
             <Col>
               <Form.Group className="form-group">
-                <Form.Label>Apellido</Form.Label>
-                <Form.Control
-                  required
-                  onChange={(e)=>setApellido(e.target.value)} 
-                />
+              <FloatingLabel
+                  controlId="floatingInput"
+                  label="Apellido:"
+                >
+                  <Form.Control
+                    type="text"
+                    placeholder="Apellido:"
+                    required
+                    onChange={(e)=>setApellido(e.target.value)} 
+                  />
+                </FloatingLabel>
               </Form.Group>
             </Col>
           </Row>
-          <Form.Group className="form-group">
-            <Form.Label>Cedula</Form.Label>
-            <Form.Control
-              required
-              onChange={(e)=>setCedula(e.target.value)} 
-            />
-          </Form.Group>
-          <Form.Group className="form-group">
-            <Form.Label>Telefono</Form.Label>
-            <Form.Control
-              required
-              onChange={(e)=>setTelefono(e.target.value)} 
-            />
-          </Form.Group>
-          <Form.Group className="form-group">
-            <Form.Label>Correo</Form.Label>
-            <Form.Control
-              required
-              onChange={(e)=>setCorreo(e.target.value)} 
-            />
-          </Form.Group>
-          <Form.Group className="form-group">
-            <Form.Label>Nombre de usuario</Form.Label>
-            <Form.Control
-              required
-              onChange={(e)=>setUsername(e.target.value)} 
-            />
-          </Form.Group>
-          <Form.Group className="form-group">
-            <Form.Label>Constraseña</Form.Label>
-            <Form.Control
-              type="password"
-              required
-              onChange={(e)=>setContrasena(e.target.value)} 
-            />
-          </Form.Group>
-          <Form.Group as={Row} className="mb-3">
-            <Form.Label as="legend" column sm={2}>
-              ¿Eres trasnportista?
-            </Form.Label>
-            <Col sm={10}>
-              <Form.Check
-                type="radio"
-                label="Si"
-                value= "true"
-                name="formHorizontalRadios"
-                id="formHorizontalRadios1"
-                onChange={(e)=>setTransportista(e.target.value)}
-              />
-              <Form.Check
-                type="radio"
-                label="No"
-                Value="false"
-                name="formHorizontalRadios"
-                id="formHorizontalRadios2"
-                onChange={(e)=>setTransportista(e.target.value)}
-              />
+          <Row>
+            <Col>
+              <Form.Group className="form-group">
+                <FloatingLabel
+                  controlId="floatingInput"
+                  label="Cedula:"
+                >
+                  <Form.Control
+                    type="number"
+                    placeholder="Cedula:"
+                    required
+                    onChange={(e)=>setCedula(e.target.value)} 
+                  />
+                </FloatingLabel>
+              </Form.Group>
             </Col>
-          </Form.Group>
-          <button type="submit" className="btn"><span class="fa fa-save"></span> Guardar</button>
+            <Col>
+              <Form.Group className="form-group">
+              <FloatingLabel
+                  controlId="floatingInput"
+                  label="Telefono:"
+                >
+                  <Form.Control
+                    type="tel"
+                    placeholder="Telefono:"
+                    required
+                    onChange={(e)=>setTelefono(e.target.value)} 
+                  />
+                </FloatingLabel>
+              </Form.Group>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Form.Group className="form-group">
+                <FloatingLabel
+                  controlId="floatingInput"
+                  label="Correo:"
+                >
+                  <Form.Control
+                    type="email"
+                    placeholder="Correo:"
+                    required
+                    onChange={(e)=>setCorreo(e.target.value)} 
+                  />
+                </FloatingLabel>
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group className="form-group">
+              <FloatingLabel
+                  controlId="floatingInput"
+                  label="Nombre de usuario:"
+                >
+                  <Form.Control
+                    type="text"
+                    placeholder="Nombre de usuario:"
+                    required
+                    onChange={(e)=>setUsername(e.target.value)} 
+                  />
+                </FloatingLabel>
+              </Form.Group>
+            </Col>
+          </Row>
+          <Row>
+            <Col style={{marginRight: "80px"}}>
+              <Form.Group className="form-group">
+                <FloatingLabel
+                  controlId="floatingInput"
+                  label="Contraseña:"
+                >
+                  <Form.Control
+                    type="password"
+                    placeholder="Contraseña:"
+                    pattern=".{8,}" 
+                    title="la contraseña debe tener un minimo de 8 caracteres"
+                    required
+                    onChange={(e)=>setContrasena(e.target.value)} 
+                  />
+                </FloatingLabel>
+              </Form.Group>
+            </Col>
+            <Col>
+                <p as="legend" column sm={2}>
+                  ¿Eres transportista?
+                </p>
+            </Col>
+            <Col>
+              <Form.Group>
+                <Form.Check
+                  type="radio"
+                  label="Si"
+                  value= "true"
+                  name="formHorizontalRadios"
+                  id="formHorizontalRadios1"
+                  onChange={(e)=>setTransportista(e.target.value)}
+                />
+                <Form.Check
+                  type="radio"
+                  label="No"
+                  Value="false"
+                  name="formHorizontalRadios"
+                  id="formHorizontalRadios2"
+                  onChange={(e)=>setTransportista(e.target.value)}
+                />
+              
+              </Form.Group>
+            </Col>
+          </Row>
+
+          <Button type="submit" variant="primary" className="btn"> Guardar</Button>
 
           {/* <Button
             variant="primary"

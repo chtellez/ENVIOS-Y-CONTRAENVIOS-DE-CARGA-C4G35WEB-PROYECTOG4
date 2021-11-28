@@ -15,7 +15,7 @@ import { Container, Form, Button } from "react-bootstrap";
 
 
 export default function SignInSide() {
-
+  //aca se establece los datos que se tomaran del formulario
   const [correo,setCorreo]= useState('')
   const [contrasena,setContrasena]= useState('')
  
@@ -23,7 +23,7 @@ export default function SignInSide() {
  
    e.preventDefault();
    const usuario={correo,contrasena}
-   const respuesta = await Axios.post('api/usuario/login',usuario); //Acomodar ruta segun el back
+   const respuesta = await Axios.post('api/usuario/login',usuario); //acá se envian a peticion
    console.log(respuesta)
    const mensaje= respuesta.data.mensaje
  
@@ -39,7 +39,8 @@ export default function SignInSide() {
    }
  
    else {
- 
+
+    //aca se establece lo que se almacenara en el sesionstorage
      const token = respuesta.data.token
      const nombre = respuesta.data.nombre
      const transportista = respuesta.data.transportista
@@ -56,29 +57,17 @@ export default function SignInSide() {
        showConfirmButton: false,
        timer: 1500
      })
-     if (respuesta.data.transportista == true){
+     if (respuesta.data.transportista == true){//acomodar aqui las rutas pa donde sera redirigido despues del login
        window.location.href='/home'
      }else{
        window.location.href='/'
      }
      
  
- 
    }
 
- 
   }
  
- 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const data = new FormData(event.currentTarget);
-  //   // eslint-disable-next-line no-console
-  //   console.log({
-  //     email: data.get('email'),
-  //     password: data.get('password'),
-  //   });
-  // };
   return (
     
     <Container className="base-container">

@@ -19,7 +19,6 @@ class PagAgregarVehiculo extends React.Component {
   async CargaVehiculosBD() {
     await Axios.get('api/vehiculo/todos')
       .then(response => {
-        console.log(response.data["body"]);
         this.setState(
           {
             StsVehiculos: response.data["body"],
@@ -30,12 +29,16 @@ class PagAgregarVehiculo extends React.Component {
       })
   }
 
-  ManejadorAgregar(){
-
-  }
-
-  ManejadorEliminar(id) {
-    console.log("Botón eliminar id:" + id);
+  async ManejadorEliminar(idVehiculo) {
+    const aux = idVehiculo;
+    await Axios.delete('api/vehiculo/eliminar/',{ data: { "_id": aux } })
+      .then(response => {
+        console.log(response);
+        this.CargaVehiculosBD()
+      })
+      .catch(e => {
+        console.log(e);
+      })
   }
 
   RenderizarVehiculos() {
@@ -44,10 +47,11 @@ class PagAgregarVehiculo extends React.Component {
         return (
           <Col xs={12} sm={12} lg={12} className="mb-3 my-3">
             <CardVehiculoDeUsuario
+              key={vehiculo.id}
               TipoCarga={vehiculo.tipoCarga}
               Placa={vehiculo.placa}
               Capacidad={vehiculo.capacidad}
-              AlClick={() => this.ManejadorEliminar()} />
+              AlClick={() => this.ManejadorEliminar(vehiculo._id)} />
           </Col>
         );
       })
@@ -68,7 +72,9 @@ class PagAgregarVehiculo extends React.Component {
               </div>
               <hr />
 
-              <FormNuevoVehiculo/>
+              <FormNuevoVehiculo
+                actualizarCards={() => { this.CargaVehiculosBD() }}
+              />
 
             </Col>
             <Col xs={12} sm={8} lg={6}>

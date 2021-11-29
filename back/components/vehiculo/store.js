@@ -10,7 +10,12 @@ function getVehiculos(){
   return vehiculos;
 }
 
+function deleteVehiculo(idVehiculo){
+  Model.findByIdAndDelete(idVehiculo,(error,deletedRecord) => {});
+}
+
 module.exports = {
   add: addVehiculo,
   list: getVehiculos,
+  del: deleteVehiculo,
 }

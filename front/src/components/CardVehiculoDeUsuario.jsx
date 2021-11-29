@@ -9,11 +9,11 @@ class CardVehiculoDeUsuario extends React.Component {
   render() {
     return (
       <Card>
-        <Card.Header ><strong>Camión Chevrolet 20 Toneladas</strong> </Card.Header>
+        <Card.Header ><strong>VEHÍCULO DE CARGA. </strong> </Card.Header>
         <Card.Body>
           {/* <Card.Title>Tipo: Camión 20 Toneladas</Card.Title> */}
           <Card.Text>
-            Vehículo adecuado para transporte de ganado y cerdos.
+            Idóneo para transporte puerta a puerta.
           </Card.Text>
           <ul>
             <li><strong>Tipo Carga: </strong>{this.props.TipoCarga}</li>

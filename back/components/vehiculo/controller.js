@@ -20,7 +20,18 @@ async function addVehiculo(req, res) {
   }
 }
 
+async function deleteVehiculo(req, res) {
+  try {
+    const idVehiculo = req.body;
+    const newVehiculo = await store.del(idVehiculo);
+    response.success(req,res, res.json(newVehiculo),201)
+  } catch (error) {
+    response.error(req, res, 'Error al eliminar el vehículo', 500, error)
+  }
+}
+
 module.exports = {
   getVehiculos,
   addVehiculo,
+  deleteVehiculo,
 }

@@ -6,7 +6,7 @@ const vehiculoSchema = new Schema({
 placa:String,
 capacidad:Number,
 tipoCarga:String,
-idUser:String,
+idUsuario:String,
 });
 
 const model = mongoose.model('vehiculo', vehiculoSchema, 'vehiculos');

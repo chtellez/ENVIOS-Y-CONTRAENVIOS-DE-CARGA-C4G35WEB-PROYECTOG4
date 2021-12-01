@@ -19,10 +19,20 @@ async function addSolicitud(req, res) {
     response.error(req, res, 'Error al crear la solicitud de carga', 500, error)
   }
 }
+async function deleteSolicitud(req, res) {
+  try {
+    const idSolicitud = req.body;
+    const newSolicitud = await store.del(idSolicitud);
+    response.success(req,res, res.json(newSolicitud),201)
+  } catch (error) {
+    response.error(req, res, 'Error al eliminar la solicitud de carga', 500, error)
+  }
+}
 
 module.exports = {
 
   getSolicitudes,
   addSolicitud,
+  deleteSolicitud,
 
 }

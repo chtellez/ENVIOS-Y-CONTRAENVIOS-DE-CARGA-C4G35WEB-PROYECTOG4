@@ -3,6 +3,7 @@ import Axios from 'axios'
 import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "../styles/CrearOferta.css";
+import Swal from 'sweetalert2'
 
 class CrearOferta extends React.Component {
   constructor(props) {
@@ -54,6 +55,12 @@ class CrearOferta extends React.Component {
       fechaRecogida: fechaRecogida,
     })
       .then(response => {
+        Swal.fire({
+          icon:'success',
+          title: 'oferta creada',
+          showConfirmButton: false,
+          timer: 1500
+        })
         // console.log(response);
       })
       .catch(e => {

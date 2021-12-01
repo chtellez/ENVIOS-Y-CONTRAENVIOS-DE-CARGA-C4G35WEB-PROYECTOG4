@@ -1,4 +1,5 @@
 import React from "react";
+import Axios from 'axios'
 import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "../styles/CrearOferta.css";
@@ -9,18 +10,49 @@ class CrearOferta extends React.Component {
     this.state = { date: new Date() };
   }
 
-  componentDidMount() {
-    //this.timerID = setInterval(() => {return this.tick()}, 1000);
-  }
+  async ManejadorBtnAgregar() {
 
-  componentWillUnmount() {
-    //clearInterval(this.timerID);
-  }
+    const e = document.getElementById("Origen");
+    const origen = e.options[e.selectedIndex].text;
 
-  tick() {
-    this.setState({
-      date: new Date(),
-    });
+    const f = document.getElementById("Destino");
+    const destino = f.options[e.selectedIndex].text;
+
+    const g = document.getElementById("Largo")
+    const largo = g.value;
+
+    const h = document.getElementById("Ancho")
+    const ancho = h.value;
+
+    const i = document.getElementById("Alto")
+    const alto = i.value;
+
+    const j = document.getElementById("Peso")
+    const peso = j.value;
+
+    const k = document.getElementById("Tipo");
+    const tipo = k.options[e.selectedIndex].text;
+
+    const fechaRecogida = "2021-12-05T00:00:00.000+00:00";
+
+    // console.log("Datos", origen, destino, largo, ancho, alto, peso, tipo, fechaRecogida);
+    await Axios.post('api/demanda/', {
+      origen: origen,
+      destino: destino,
+      largo: largo,
+      ancho: ancho,
+      alto: alto,
+      volumen: 123,
+      peso: peso,
+      tipo: tipo,
+      fechaRecogida: fechaRecogida,
+    })
+      .then(response => {
+        // console.log(response);
+      })
+      .catch(e => {
+        console.log(e);
+      })
   }
 
   render() {
@@ -82,7 +114,7 @@ class CrearOferta extends React.Component {
                 <Form.Group controlId="Alto">
                   <Form.Label>Alto</Form.Label>
                   <Form.Range />
-                  
+
                 </Form.Group>
               </Col>
               <Col xs={0} lg={2}  >
@@ -130,7 +162,8 @@ class CrearOferta extends React.Component {
               <Col xs={0} lg={2}  >
               </Col>
               <Col>
-                <Button variant="secondary" type="submit">
+                <Button variant="secondary" //type="submit"
+                  onClick={() => this.ManejadorBtnAgregar()}>
                   Publicar solicitud
                 </Button>
               </Col>

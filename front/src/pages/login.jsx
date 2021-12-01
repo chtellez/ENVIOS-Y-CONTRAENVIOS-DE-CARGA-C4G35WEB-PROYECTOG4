@@ -3,16 +3,10 @@ import Axios from 'axios'
 import Swal from 'sweetalert2'
 import { APIHOST as host } from '../app.json';
 
-
-
-
-
-
 // import Loading from '../Loading/Loading';
 import loginImg from "../assets/login.svg";
 import "../styles/login.scss";
 import { Container, Form, Button } from "react-bootstrap";
-
 
 export default function SignInSide() {
   //aca se establece los datos que se tomaran del formulario
@@ -81,31 +75,28 @@ export default function SignInSide() {
    }
 
   }
- 
+
   return (
-    
     <Container className="base-container">
-
       {/* <Loading show={this.state.loading} /> */}
-
       <div className="header">Inicio Sesión</div>
 
       <div className="content">
         <div className="image">
-            <img src={loginImg} alt="fondo_login" />
+          <img src={loginImg} alt="fondo_login" />
         </div>
         <form className="form" onSubmit={sesion}>
           <Form.Group className="form-group">
             <Form.Label>Correo</Form.Label>
             <Form.Control
-              onChange={(e)=>setCorreo(e.target.value)}
+              onChange={(e) => setCorreo(e.target.value)}
             />
           </Form.Group>
           <Form.Group className="form-group">
             <Form.Label>Constraseña</Form.Label>
             <Form.Control
               type="password"
-              onChange={(e)=>setContrasena(e.target.value)}
+              onChange={(e) => setContrasena(e.target.value)}
             />
           </Form.Group>
           <p>¿No tienes cuenta? <a href="/register">Registrate!</a></p>
@@ -119,10 +110,7 @@ export default function SignInSide() {
           </Button>
         </form>
       </div>
-
-
     </Container>
-
   );
 }
 

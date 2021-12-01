@@ -17,7 +17,7 @@ class PagAgregarVehiculo extends React.Component {
   }
 
   async CargaVehiculosBD() {
-    await Axios.get('api/vehiculo/todos')
+    await Axios.get('api/vehiculo/')
       .then(response => {
         this.setState(
           {
@@ -31,7 +31,7 @@ class PagAgregarVehiculo extends React.Component {
 
   async ManejadorEliminar(idVehiculo) {
     const aux = idVehiculo;
-    await Axios.delete('api/vehiculo/eliminar/',{ data: { "_id": aux } })
+    await Axios.delete('api/vehiculo/',{ data: { "_id": aux } })
       .then(response => {
         console.log(response);
         this.CargaVehiculosBD()

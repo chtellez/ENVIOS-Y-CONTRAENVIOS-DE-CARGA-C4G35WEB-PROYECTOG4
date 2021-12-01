@@ -12,7 +12,6 @@ const solicitudSchema = new Schema({
   peso:Number,
   tipo:String,
   fechaRecogida:Date,
-
 });
 
 const model = mongoose.model('solicitud', solicitudSchema, 'solicitudes');

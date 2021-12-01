@@ -28,7 +28,7 @@ class FormNuevoVehiculo extends React.Component {
     
     const TextoUsuario = sessionStorage.getItem('idUsuario');
 
-    await Axios.post('api/vehiculo/agregar', {
+    await Axios.post('api/vehiculo/', {
       tipoCarga: TextoTipoCarga,
       placa: TextoPlaca,
       capacidad: TextoCapacidad,

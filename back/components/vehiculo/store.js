@@ -2,7 +2,7 @@ const Model = require('./model');
 
 function addVehiculo(vehiculo){
   const newVehiculo = new Model(vehiculo);
-  newVehiculo.save()
+  return newVehiculo.save()
 }
 
 function getVehiculos(){

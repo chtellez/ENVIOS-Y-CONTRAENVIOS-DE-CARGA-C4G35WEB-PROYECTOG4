@@ -61,8 +61,17 @@ UsuariosCtrl.login= async(req,res)=>{
         const token = jwt.sign({_id: usuario._id},'Secreta')
         res.json({
             mensaje: 'Bienvenido',
-            id:usuario.id,
+            id:usuario._id,
             nombre: usuario.nombre,
+            // desde aqui
+            apellido: usuario.apellido,
+            cedula: usuario.cedula,
+            telefono: usuario.telefono,
+            correo: usuario.correo,
+            username: usuario.username,
+            contrasena: usuario.contrasena,
+            // hasta aqui no deberia mostrarse
+
             transportista: usuario.transportista,
             token
         })
@@ -81,6 +90,18 @@ UsuariosCtrl.login= async(req,res)=>{
 
 
 
+}
+UsuariosCtrl.listarId= async(req,res)=>{
+    const id = req.params.id
+    const respuesta = await Usuario.findById({_id: id})
+    res.json(respuesta)
+}
+UsuariosCtrl.actualizar= async (req,res)=>{
+    const id = req.params.id
+    await Usuario.findByIdAndUpdate({_id:id},req.body)
+    res.json({
+        mensaje: 'Usuario actualizado'
+    })
 }
 
 module.exports= UsuariosCtrl

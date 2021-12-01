@@ -43,13 +43,27 @@ export default function SignInSide() {
     //aca se establece lo que se almacenara en el sesionstorage
      const token = respuesta.data.token
      const nombre = respuesta.data.nombre
+     //de aqui
+     const apellido = respuesta.data.apellido
+     const cedula = respuesta.data.cedula
+     const telefono = respuesta.data.telefono
+     const correo = respuesta.data.correo
+     const usuario = respuesta.data.username
+     //hasta aqui no se deberia mostrar en el sesionStorage, cambiar en un futuro.
      const transportista = respuesta.data.transportista
-     const idUsuario= respuesta.data.id
+     const _id= respuesta.data._id
  
      sessionStorage.setItem('token',token)
      sessionStorage.setItem('nombre',nombre)
+
+     sessionStorage.setItem('apellido',apellido)
+     sessionStorage.setItem('cedula',cedula)
+     sessionStorage.setItem('telefono',telefono)
+     sessionStorage.setItem('correo',correo)
+     sessionStorage.setItem('usuario',usuario)
+
      sessionStorage.setItem('transportista',transportista)
-     sessionStorage.setItem('idUsuario',idUsuario)
+     sessionStorage.setItem('_id',_id)
  
      Swal.fire({
        icon:'success',
@@ -58,7 +72,7 @@ export default function SignInSide() {
        timer: 1500
      })
      if (respuesta.data.transportista == true){//acomodar aqui las rutas pa donde sera redirigido despues del login
-       window.location.href='/home'
+       window.location.href='/'
      }else{
        window.location.href='/'
      }

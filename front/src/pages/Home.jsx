@@ -28,7 +28,7 @@ const Home = () => {
           <div className="caption">
           
           <h1 className="titulis justify-content-center">¡Con nosotros tus envios seran seguros y eficientes!</h1>
-          <a href="/register" style={{textDecoration: "none"}}><span className="border">Registrate</span></a>
+          {/* <a href="/register" style={{textDecoration: "none"}}><span className="border">V</span></a> */}
           </div>
           <svg
           className="wave2"

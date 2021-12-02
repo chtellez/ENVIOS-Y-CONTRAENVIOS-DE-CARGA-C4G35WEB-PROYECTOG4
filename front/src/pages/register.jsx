@@ -51,7 +51,7 @@ export default function RegistrarUsuario() {
 
 
       setTimeout(()=>{
-        window.location.href='/'
+        window.location.href='/login'
       },1600)
 
 

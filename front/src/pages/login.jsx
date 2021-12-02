@@ -10,49 +10,70 @@ import { Container, Form, Button } from "react-bootstrap";
 
 export default function SignInSide() {
   //aca se establece los datos que se tomaran del formulario
-  const [correo, setCorreo] = useState('')
-  const [contrasena, setContrasena] = useState('')
+  const [correo,setCorreo]= useState('')
+  const [contrasena,setContrasena]= useState('')
+ 
+  const sesion=async(e)=>{
+ 
+   e.preventDefault();
+   const usuario={correo,contrasena}
+   const respuesta = await Axios.post('api/usuario/login',usuario); //acá se envian a peticion
+   console.log(respuesta)
+   const mensaje= respuesta.data.mensaje
+ 
+   if(mensaje!=='Bienvenido') {
+ 
+     Swal.fire({
+       icon:'error',
+       title: mensaje,
+       showConfirmButton: false,
+       timer: 1500
+     })
+ 
+   }
+ 
+   else {
 
-  const sesion = async (e) => {
+    //aca se establece lo que se almacenara en el sesionstorage
+     const token = respuesta.data.token
+     const nombre = respuesta.data.nombre
+     //de aqui
+     const apellido = respuesta.data.apellido
+     const cedula = respuesta.data.cedula
+     const telefono = respuesta.data.telefono
+     const correo = respuesta.data.correo
+     const usuario = respuesta.data.username
+     //hasta aqui no se deberia mostrar en el sesionStorage, cambiar en un futuro.
+     const transportista = respuesta.data.transportista
+     const _id= respuesta.data._id
+ 
+     sessionStorage.setItem('token',token)
+     sessionStorage.setItem('nombre',nombre)
 
-    e.preventDefault();
-    const usuario = { correo, contrasena }
-    const respuesta = await Axios.post('api/usuario/login', usuario); //acá se envian a peticion
-    console.log(respuesta)
-    const mensaje = respuesta.data.mensaje
+     sessionStorage.setItem('apellido',apellido)
+     sessionStorage.setItem('cedula',cedula)
+     sessionStorage.setItem('telefono',telefono)
+     sessionStorage.setItem('correo',correo)
+     sessionStorage.setItem('usuario',usuario)
 
-    if (mensaje !== 'Bienvenido') {
-      Swal.fire({
-        icon: 'error',
-        title: mensaje,
-        showConfirmButton: false,
-        timer: 1500
-      })
-    } 
-    else {
-      //aca se establece lo que se almacenara en el sesionstorage
-      const token = respuesta.data.token
-      const nombre = respuesta.data.nombre
-      const transportista = respuesta.data.transportista
-      const idUsuario = respuesta.data.id
+     sessionStorage.setItem('transportista',transportista)
+     sessionStorage.setItem('_id',_id)
+ 
+     Swal.fire({
+       icon:'success',
+       title: mensaje,
+       showConfirmButton: false,
+       timer: 1500
+     })
+     if (respuesta.data.transportista == true){//acomodar aqui las rutas pa donde sera redirigido despues del login
+       window.location.href='/'
+     }else{
+       window.location.href='/'
+     }
+     
+ 
+   }
 
-      sessionStorage.setItem('token', token)
-      sessionStorage.setItem('nombre', nombre)
-      sessionStorage.setItem('transportista', transportista)
-      sessionStorage.setItem('idUsuario', idUsuario)
-
-      Swal.fire({
-        icon: 'success',
-        title: mensaje,
-        showConfirmButton: false,
-        timer: 1500
-      })
-      if (respuesta.data.transportista == true) {//acomodar aqui las rutas pa donde sera redirigido despues del login
-        window.location.href = '/home'
-      } else {
-        window.location.href = '/'
-      }
-    }
   }
 
   return (

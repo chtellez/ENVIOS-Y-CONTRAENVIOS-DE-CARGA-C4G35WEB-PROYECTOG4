@@ -10,8 +10,8 @@ const logger = require('morgan');
 // var auth = require("./auth/main_auth")
 
 //Immportamos la configuracion de la base de datos
-const database = require("./config/database");
-// require("./config/database");
+// const database = require("./config/database");
+require("./config/database");
 const app = express();
 
 app.use(cors());
@@ -35,7 +35,7 @@ app.use(function(req, res, next) {
 });
 
 //Mongo connection
-database.mongoConnect();
+// database.mongoConnect();
 
 // error handler
 app.use(function(err, req, res, next) {

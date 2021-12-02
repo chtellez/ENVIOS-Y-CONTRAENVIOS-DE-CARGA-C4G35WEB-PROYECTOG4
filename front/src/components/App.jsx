@@ -44,7 +44,7 @@ function App() {
                 <Route exact path="/crear_oferta" element={<CrearOferta />}></Route>
                 <Route exact path="/solicitudes" element={<SolicitudesCarga />}></Route>
                 <Route exact path="/aceptar_oferta" element={<AceptarOferta />}></Route>
-                <Route exact path="/login" elem ent={<InicioSesion />}></Route>
+                <Route exact path="/login" element={<InicioSesion />}></Route>
                 <Route exact path="/register" element={<Register />}></Route>
                 <Route exact path="/perfil" element={<Perfil />}></Route>
                 <Route exact path="/PagAgregarVehiculo" element={<PagAgregarVehiculo/>}></Route>
@@ -57,7 +57,7 @@ function App() {
         </footer>
       </AuthContextProvider>
     </div>
-    
+
   );
 }
 

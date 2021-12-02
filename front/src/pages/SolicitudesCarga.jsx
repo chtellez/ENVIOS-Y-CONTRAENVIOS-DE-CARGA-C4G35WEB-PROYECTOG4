@@ -1,62 +1,192 @@
-import React, {useContext, useEffect} from "react";
-import { Table, Card, Button, OverlayTrigger, Popover, ListGroup } from "react-bootstrap";
+import React, {useContext, useEffect, useState} from "react";
+import { Table, Card, Button, Form, FloatingLabel, Row, Col, Modal} from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Vehiculos from "../components/Vehiculos";
 import { SolicitudesContext } from '../context/SolicitudesContext';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+import BootstrapTable from 'react-bootstrap-table-next';
 
-  const mostrarVehiculos = (
-    <Popover id="popover-basic" style={{ width:"1000px"}}>
-      <Popover.Header as="h3">Vehículos Registrados</Popover.Header>
-      <Popover.Body>
-        <Vehiculos/>
-      </Popover.Body>
-    </Popover>
-  );
+  function MyVerticallyCenteredModal() {
 
-  const primerSolicitud = (
-    <Popover id="popover-basic">
-      <Popover.Header as="h3">Mudanza Bogotá-Medellin</Popover.Header>
-      <Popover.Body>
-        <Card.Text><strong>Volumen:</strong> 24.000 mts<sup>3</sup></Card.Text>
-        <Card.Text><strong>Fecha de envío:</strong> 20 / Nov / 2021</Card.Text>
-        <Card.Text><strong>Contenido:</strong>
-        <ListGroup className="my-2">
-            <ListGroup.Item>55 Cajas de 30*20*30</ListGroup.Item>
-            <ListGroup.Item>2 Escritorios</ListGroup.Item>
-            <ListGroup.Item>2 Televisores</ListGroup.Item>
-            <ListGroup.Item>17 Bolsas industriales con cosas</ListGroup.Item>
-            <ListGroup.Item>1 Nevera y 1 Lavadora</ListGroup.Item>
-            <ListGroup.Item>1 Sofa de 3 puestos</ListGroup.Item>
-            <ListGroup.Item>1 Comedor con 6 sillas</ListGroup.Item>
-            <ListGroup.Item>1 Impresora de tinta y 1 Impresora 3D</ListGroup.Item>
-            <ListGroup.Item>1 Cama doble con colchon</ListGroup.Item>
-            <ListGroup.Item>2 Camas sensillas con colchon</ListGroup.Item>
-            <ListGroup.Item>3 Bicicletas</ListGroup.Item>
-            <ListGroup.Item>1 Equipo de sonido</ListGroup.Item>
-            </ListGroup>
-        </Card.Text>
-        <Card.Text><strong>Observaciones:</strong> Estoy en una casa de dos pisos y voy para un piso 31 con ascensor</Card.Text>
-      </Popover.Body>
-    </Popover>
-  );
+    const {modalShow, setModalShow, origenOferta, destinoOferta, fechaOferta, setFechaOferta,
+            fechaValidez, setFechaValidez, setOfertaAceptada, vehiculos, actualizarVehiculos,
+            setTiempoEntrega, tiempoEntrega, precio, setPrecio} = useContext(SolicitudesContext);
 
+    useEffect(()=>{
+      actualizarVehiculos();
+    },[])
+
+    // const guardarOferta = ()=> {
+    //   await Axios.post('api/ofertas', {
+    //     user:sessionStorage.getItem('_id')
+    //     precio:set(),
+    //     fechaRecogida:Number,
+    //     horaRecogida:Number,
+    //     tiempoDeEntrega:Number,
+    //     validez:Date,
+    //     aceptada:Number,
+    //     vehiculo:{
+    //       type: Schema.ObjectId,
+    //       ref:"vehiculo"
+    //     }
+    //     origen: origen,
+    //     destino: destino,
+    //     largo: largo,
+    //     ancho: ancho,
+    //     alto: alto,
+    //     volumen: 123,
+    //     peso: peso,
+    //     tipo: tipo,
+    //     fechaRecogida: fechaRecogida
+    //   })
+    //     .then(response => {
+    //       // console.log(response);
+    //     })
+    //     .catch(e => {
+    //       console.log(e);
+    //     })
+    // }
+
+
+    const columns = [{
+      dataField: 'tipoCarga',
+      text: 'Tipo Carga'
+    },
+    {
+      dataField: 'placa',
+      text: 'Placa'
+    }, {
+      dataField: 'capacidad',
+      text: 'Capacidad'
+    }];
+
+    const selectRow = {
+      mode: 'radio',
+      clickToSelect: true,
+      style: { backgroundColor: 'lightGrey' }
+    };
+
+    return (
+      <Modal
+        show={modalShow}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Crear oferta: {origenOferta} - {destinoOferta}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <Form>
+              <Row>
+                <Col>
+                  <Row>
+                    <Col>
+                      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        <Form.Label>Precio Oferta</Form.Label>
+                        <Form.Control type="number" placeholder="0" onChange={(event) => {setPrecio(event.target.value)}}/>
+                      </Form.Group>
+                    </Col>
+                    <Col className="col-12">
+                      <Form.Group className="mb-3 " controlId="exampleForm.ControlInput1">
+                        < Form.Label>Hora Recogida</Form.Label>
+                        <DatePicker
+                          id="datePicker"
+                          isClearable
+                          showTimeSelect
+                          className="form-control"
+                          selected={fechaOferta}
+                          onChange={(date) => setFechaOferta(date)}
+                          locale="es-CO"
+                          timeFormat="p"
+                          timeIntervals={15}
+                          dateFormat="Pp"/>
+                      </Form.Group>
+                    </Col>
+                    <Col >
+                      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        <Form.Label>Tiempo de entrega</Form.Label>
+                        <Form.Control type="number" placeholder="0" onChange={(event) => {setTiempoEntrega(event.target.value)}}/>
+                      </Form.Group>
+                    </Col>
+                    <Col >
+                      <Form.Group className="mb-3 " controlId="exampleForm.ControlInput1">
+                        < Form.Label>Fecha de validez</Form.Label>
+                        <DatePicker
+                          id="datePicker"
+                          isClearable
+                          className="form-control"
+                          selected={fechaValidez}
+                          onChange={(date) => setFechaValidez(date)}
+                          locale="es-CO"
+                          dateFormat="P"/>
+                      </Form.Group>
+                    </Col>
+                  </Row>
+
+                </Col>
+                <Col>
+                  <Row>
+                    <Col className="col-12">
+                      <Card.Title>Vechículo</Card.Title>
+
+
+                      <BootstrapTable
+                        keyField='_id'
+                        data={ vehiculos }
+                        columns={ columns }
+                        selectRow={ selectRow }
+                        onSelect={(row, isSelect, rowIndex, e) => {
+                          console.log(row)
+                          console.log(isSelect)
+                          console.log(rowIndex)
+                          console.log(e)
+                        }}
+                      />
+                    </Col>
+
+                  </Row>
+                </Col>
+
+                <FloatingLabel
+                  controlId="floatingInput"
+                ></FloatingLabel>
+              </Row>
+            </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button >Guardar</Button>
+          <Button onClick={() => setModalShow(false)}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
 
 const SolicitudesCarga = () => {
 
-
-  const {solicitudes, actualizarSolicitudes} = useContext(SolicitudesContext);
+  // const [modalShow, setModalShow] = useState(false);
+  const {solicitudes,
+          actualizarSolicitudes,
+          setModalShow,
+          setOrigenOferta,
+          setDestinoOferta} = useContext(SolicitudesContext);
 
   useEffect(()=>{
     actualizarSolicitudes();
-    console.log(solicitudes)
   },[])
 
-  // componentDidMount(){
-  //   actualizarSolicitudes();
-  // }
+
+  function CargarValoresOferta(solicitud){
+    setOrigenOferta(solicitud.origen)
+    setDestinoOferta(solicitud.destino)
+  }
 
   return (
     <React.Fragment>
+      <MyVerticallyCenteredModal/>
         <Card style={{ width: '100%' }} className="m-3">
             <Card.Body>
                 <Card.Title>Solicitudes de carga</Card.Title>
@@ -83,24 +213,7 @@ const SolicitudesCarga = () => {
                                 <td>{solicitud.tipo}</td>
                                 <td>{solicitud.volumen}</td>
                                 <td>{solicitud.fechaRecogida}</td>
-                                <td>
-                                        <OverlayTrigger
-                                            placement="left"
-                                            delay={{ show: 250, hide: 400 }}
-                                            overlay={primerSolicitud}
-                                        >
-                                            <Button variant="primary" className="px-1 py-0" ><FontAwesomeIcon icon={'id-card'} size="sm"/></Button>
-                                        </OverlayTrigger>
-
-                                        <OverlayTrigger
-                                            trigger="click"
-                                            placement="left"
-                                            delay={{ show: 250, hide: 400 }}
-                                            overlay={mostrarVehiculos}
-                                        >
-                                            <Button variant="success" className="px-1 py-0" ><FontAwesomeIcon icon={'vote-yea'} size="sm"/></Button>
-                                        </OverlayTrigger>
-                                </td>
+                                <td><Button variant="success" className="px-1 py-0" onClick={() => {CargarValoresOferta(solicitud); setModalShow(true)}}><FontAwesomeIcon icon={'vote-yea'} size="sm"/></Button></td>
                               </tr>
                             );
                           })}

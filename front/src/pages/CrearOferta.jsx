@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Axios from 'axios'
-import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
+import { Button, Col, Card, Form, Image, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "../styles/CrearOferta.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 class CrearOferta extends React.Component {
   constructor(props) {
@@ -38,8 +40,8 @@ class CrearOferta extends React.Component {
 
     const k = document.getElementById("Tipo");
     const tipo = k.options[e.selectedIndex].text;
-
-    const fechaRecogida = "2021-12-05T00:00:00.000+00:00";
+    
+    const fechaRecogida = this.state.date
 
     // console.log("Datos", origen, destino, largo, ancho, alto, peso, tipo, fechaRecogida);
     await Axios.post('api/solicitudes', {
@@ -93,10 +95,10 @@ class CrearOferta extends React.Component {
   render() {
     return (
       <>
-        <Container>
+        <Card className="mt-4">
           <Image
             src="https://placeimg.com/800/250/tech"
-            className="mx-auto d-block"
+            className="mx-auto d-block mt-2"
           />
           <Form className="margen-form">
             <Row>
@@ -190,6 +192,12 @@ class CrearOferta extends React.Component {
                 </Form.Group>
               </Col>
               <Col>
+              <Form.Group className="mb-3" controlId="Tipo">
+                  <Form.Label>Fecha de recogida</Form.Label>
+                    <DatePicker className="form-control" selected={this.state.date} onChange={(date) => this.setState({date:date})} />
+                </Form.Group>
+              </Col>
+              <Col>
                 <Form.Group className="mb-3" controlId="formDatosEnvio">
                   <Form.Label>Los datos de su envío</Form.Label>
                   <Form.Control type="text" placeholder="Normal text" />
@@ -215,7 +223,7 @@ class CrearOferta extends React.Component {
             </Row>
           </Form>
 
-        </Container>
+        </Card>
       </>
     );
   }

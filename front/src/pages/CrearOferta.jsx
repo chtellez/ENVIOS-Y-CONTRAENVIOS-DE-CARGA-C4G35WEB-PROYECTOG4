@@ -82,6 +82,14 @@ class CrearOferta extends React.Component {
     lbl.innerHTML = valor + " cm";
   }
 
+  manejadorChangePeso(){    
+    const lbl = document.getElementById("LblPeso");
+    const range = document.getElementById("Peso");
+    const valor = range.value;
+    lbl.innerHTML = valor + " Kg";
+  }
+
+
   render() {
     return (
       <>
@@ -156,9 +164,12 @@ class CrearOferta extends React.Component {
               <Col xs={0} lg={2}  >
               </Col>
               <Col>
+
+              
                 <Form.Group controlId="Peso">
-                  <Form.Label>Peso aproximado</Form.Label>
+                  <Form.Label>Peso aproximado (Kg)</Form.Label>
                   <Form.Range />
+                  <Form.Label id="LblAlto">0 cm</Form.Label>
                 </Form.Group>
               </Col>
               <Col xs={6}  >

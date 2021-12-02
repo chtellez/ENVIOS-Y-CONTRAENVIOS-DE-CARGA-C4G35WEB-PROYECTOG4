@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', require('./routes/routes'))
 
-app.use('/usuario',require('./routes/Usuario.route'))
+app.use('/usuario',require('./components/usuario/Usuario.route'))
 
 
 app.use(cookieParser());

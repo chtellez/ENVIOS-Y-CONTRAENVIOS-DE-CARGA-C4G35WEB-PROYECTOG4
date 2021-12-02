@@ -20,7 +20,7 @@ const Footer = () => {
               <Col style={{height:"100%"}} className="align-content-center">
               <Row >
                 <Col className="col-12 d-flex justify-content-center">
-                  <Form.Label className="align-text-bottom">Tu merjor opción en envios y contraenvios de carga a todo el país.</Form.Label>
+                  <Form.Label className="align-text-bottom">Tu mejor opción en envios y contraenvios de carga a todo el país.</Form.Label>
                   </Col>
                   <Col className="d-flex justify-content-center  mt-3 " style={{width:"100%"}}>
                    <Nav.Link className="text-light" href="https://github.com/chtellez/ENVIOS-Y-CONTRAENVIOS-DE-CARGA-C4G35WEB-PROYECTOG4"><FontAwesomeIcon  icon={['fab', 'github']} className="mx-2" size="2x"/></Nav.Link>

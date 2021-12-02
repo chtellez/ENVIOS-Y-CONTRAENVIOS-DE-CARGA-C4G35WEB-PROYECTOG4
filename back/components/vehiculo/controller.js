@@ -14,7 +14,7 @@ async function addVehiculo(req, res) {
   try {
     const vehiculo = req.body;
     const newVehiculo = await store.add(vehiculo)
-    response.success(req,res, res.json(newVehiculo),201)
+    response.success(req,res, newVehiculo,201)
   } catch (error) {
     response.error(req, res, 'Error al crear el vehículo', 500, error)
   }

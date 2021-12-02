@@ -11,8 +11,13 @@ function getSolicitudes(){
   return solicitudes;
 }
 
+function deleteSolicitudes(idSolicitud){
+  Model.findByIdAndDelete(idSolicitud,(error,deletedRecord) => {});
+}
+
 module.exports = {
   add: addSolicitud,
   list: getSolicitudes,
+  del: deleteSolicitudes,
 }
 

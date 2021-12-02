@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "../styles/CrearOferta.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Swal from 'sweetalert2'
 
 class CrearOferta extends React.Component {
   constructor(props) {
@@ -40,7 +41,7 @@ class CrearOferta extends React.Component {
 
     const k = document.getElementById("Tipo");
     const tipo = k.options[e.selectedIndex].text;
-    
+
     const fechaRecogida = this.state.date
 
     // console.log("Datos", origen, destino, largo, ancho, alto, peso, tipo, fechaRecogida);
@@ -56,6 +57,12 @@ class CrearOferta extends React.Component {
       fechaRecogida: fechaRecogida,
     })
       .then(response => {
+        Swal.fire({
+          icon:'success',
+          title: 'oferta creada',
+          showConfirmButton: false,
+          timer: 1500
+        })
         // console.log(response);
       })
       .catch(e => {

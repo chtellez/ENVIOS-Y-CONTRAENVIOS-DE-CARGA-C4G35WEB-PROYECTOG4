@@ -6,47 +6,36 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import BootstrapTable from 'react-bootstrap-table-next';
+import Axios from 'axios'
 
   function MyVerticallyCenteredModal() {
 
     const {modalShow, setModalShow, origenOferta, destinoOferta, fechaOferta, setFechaOferta,
             fechaValidez, setFechaValidez, setOfertaAceptada, vehiculos, actualizarVehiculos,
-            setTiempoEntrega, tiempoEntrega, precio, setPrecio} = useContext(SolicitudesContext);
+            setTiempoEntrega, tiempoEntrega, precio, setPrecio,placa, setPlaca} = useContext(SolicitudesContext);
 
     useEffect(()=>{
       actualizarVehiculos();
     },[])
 
-    // const guardarOferta = ()=> {
-    //   await Axios.post('api/ofertas', {
-    //     user:sessionStorage.getItem('_id')
-    //     precio:set(),
-    //     fechaRecogida:Number,
-    //     horaRecogida:Number,
-    //     tiempoDeEntrega:Number,
-    //     validez:Date,
-    //     aceptada:Number,
-    //     vehiculo:{
-    //       type: Schema.ObjectId,
-    //       ref:"vehiculo"
-    //     }
-    //     origen: origen,
-    //     destino: destino,
-    //     largo: largo,
-    //     ancho: ancho,
-    //     alto: alto,
-    //     volumen: 123,
-    //     peso: peso,
-    //     tipo: tipo,
-    //     fechaRecogida: fechaRecogida
-    //   })
-    //     .then(response => {
-    //       // console.log(response);
-    //     })
-    //     .catch(e => {
-    //       console.log(e);
-    //     })
-    // }
+    const guardarOferta = async ()=> {
+      await Axios.post('api/ofertas', {
+        user:sessionStorage.getItem('_id'),
+        precio:precio,
+        fechaRecogida:fechaOferta,
+        horaRecogida:"",
+        tiempoDeEntrega:tiempoEntrega,
+        validez:fechaValidez,
+        aceptada:false,
+        vehiculo:placa
+      })
+        .then(response => {
+          console.log(response);
+        })
+        .catch(e => {
+          console.log(e);
+        })
+    }
 
 
     const columns = [{
@@ -140,10 +129,7 @@ import BootstrapTable from 'react-bootstrap-table-next';
                         columns={ columns }
                         selectRow={ selectRow }
                         onSelect={(row, isSelect, rowIndex, e) => {
-                          console.log(row)
-                          console.log(isSelect)
-                          console.log(rowIndex)
-                          console.log(e)
+                          setPlaca(e.target.value)
                         }}
                       />
                     </Col>
@@ -158,7 +144,7 @@ import BootstrapTable from 'react-bootstrap-table-next';
             </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button >Guardar</Button>
+          <Button onClick={guardarOferta}>Guardar </Button>
           <Button onClick={() => setModalShow(false)}>Close</Button>
         </Modal.Footer>
       </Modal>

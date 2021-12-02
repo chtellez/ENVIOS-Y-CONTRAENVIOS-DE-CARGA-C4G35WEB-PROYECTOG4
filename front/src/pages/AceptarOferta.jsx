@@ -4,6 +4,7 @@ import { Row, Col, Card, Accordion, Button, Modal,} from "react-bootstrap";
 import img from "../assets/Hand-Truck.svg";
 import CardVerOfertas from "../components/CardVerOfertas";
 import Axios from 'axios'
+import Swal from 'sweetalert2'
 
 class AceptarOferta extends React.Component  {
 
@@ -24,6 +25,8 @@ class AceptarOferta extends React.Component  {
     this.CargaOfertasBD()
   }
 
+
+
   async CargaOfertasBD() {
     await Axios.get('api/demanda/')
       .then(response => {
@@ -39,67 +42,62 @@ class AceptarOferta extends React.Component  {
 
   }
 
+
+  async ManejadorEliminar(idSolicitud) {
+
+      const aux = idSolicitud;
+      await Axios.delete('api/demanda/',{ data: { "_id": aux } })
+
+        .then(response => {
+          console.log(response);
+          const mensaje= response.data.mensaje
+          Swal.fire({
+            title: '¿Segur@ de eliminar esta oferta?',
+            text: "Esta accion es inreversible",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Aceptar y eliminar'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Oferta eliminada',
+                'Tu oferta a sido eliminada correctamente',
+                'success'
+              )
+              this.CargaOfertasBD()
+            }
+          })
+
+
+
+        })
+        .catch(e => {
+          console.log(e);
+        })
+  }
+
   RenderizarOfertas() {
     return (
       this.state.StsOfertas.map((oferta) => {
         return (
-          <Col xs={12} sm={12} lg={12} className="mb-3 my-3">
+
             <CardVerOfertas
               key={oferta.id}
-              id={oferta.id}
+              // id={oferta.id}
               origen={oferta.origen}
               destino={oferta.destino}
               largo={oferta.largo}
               ancho={oferta.ancho}
               alto={oferta.alto}
-        />
-          </Col>
+              AlClick={() => this.ManejadorEliminar(oferta._id)}
+            />
         );
       })
     );
   }
 
-  // const [show, setShow] = useState(false);
-
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
-
-  // const obteneroferta= async()=>{
-    
-  //   // const id = sessionStorage.getItem('idUsuario')
-  //   const respuesta = await Axios.get('api/vehiculo/')
-  //   .then(response => {
-  //     this.setState(
-  //       {
-  //         StsOfertas: response.data["body"],
-  //       })
-  //   })
-  //   .catch(e => {
-  //     console.log(e);
-  //   })
-
-  //   setIdOferta(respuesta.data._id)
-  //   setOrigen(respuesta.data.origen)
-  //   setDestino(respuesta.data.destino)
-  //   setLargo(respuesta.data.largo)
-  //   setAncho(respuesta.data.ancho)
-  //   setAlto(respuesta.data.alto)
-  //   setPeso(respuesta.data.peso)
-  //   setTipo(respuesta.data.tipo)
-    
-  // }
-  // const data =
-  // ofertas.map((oferta)=>({
-  //   id:oferta._id,
-  //   origen:oferta.origen,
-  //   destino:oferta.destino,
-  //   largo:oferta.largo,
-  //   ancho:oferta.ancho,
-  //   alto:oferta.alto,
-  //   peso:oferta.peso,
-  //   tipo:oferta.tipo
-
-  // }))
   render() {
     return (
       <React.Fragment>
@@ -152,12 +150,12 @@ class AceptarOferta extends React.Component  {
           </section>
           <br></br>
           <Row
-            className="ml-5 justify-content-center"
-            style={{ marginLeft: "22px" }}
+            className=" justify-content-center"
+            style={{ marginLeft: "2px" }}
           >
-            <Col xs={6} sm={6} md={3} lg={3} className="mb-5">
+
               {this.RenderizarOfertas()}
-            </Col>
+
           </Row>
           <Modal
               // show={show}
@@ -178,7 +176,7 @@ class AceptarOferta extends React.Component  {
               </Modal.Footer>
           </Modal>
 
-          
+
         </div>
       </React.Fragment>
     );

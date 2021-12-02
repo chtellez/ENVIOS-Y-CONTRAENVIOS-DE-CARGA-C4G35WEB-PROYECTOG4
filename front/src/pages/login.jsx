@@ -6,7 +6,7 @@ import { APIHOST as host } from '../app.json';
 // import Loading from '../Loading/Loading';
 import loginImg from "../assets/login.svg";
 import "../styles/login.scss";
-import { Container, Form, Button } from "react-bootstrap";
+import {  Form, Button, Container } from "react-bootstrap";
 
 export default function SignInSide() {
   //aca se establece los datos que se tomaran del formulario
@@ -45,7 +45,7 @@ export default function SignInSide() {
      const usuario = respuesta.data.username
      //hasta aqui no se deberia mostrar en el sesionStorage, cambiar en un futuro.
      const transportista = respuesta.data.transportista
-     const _id= respuesta.data._id
+     const idUsuario= respuesta.data.id
  
      sessionStorage.setItem('token',token)
      sessionStorage.setItem('nombre',nombre)
@@ -57,7 +57,7 @@ export default function SignInSide() {
      sessionStorage.setItem('usuario',usuario)
 
      sessionStorage.setItem('transportista',transportista)
-     sessionStorage.setItem('_id',_id)
+     sessionStorage.setItem('idUsuario',idUsuario)
  
      Swal.fire({
        icon:'success',
@@ -77,7 +77,7 @@ export default function SignInSide() {
   }
 
   return (
-    <Container className="base-container">
+    <Container className="base-container my-5">
       {/* <Loading show={this.state.loading} /> */}
       <div className="header">Inicio Sesión</div>
 

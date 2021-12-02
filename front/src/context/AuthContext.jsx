@@ -1,10 +1,10 @@
-import React, {createContext, useState, useMemo} from 'react';
+import React, {createContext, useState} from 'react';
 
 export const AuthContext = createContext();
 
 export default function AuthContextProvider({children}) {
 
-  const [usuario, setUsuario] = useState('');
+  const [usuario, setUsuario] = useState(null);
   const [esTransportista, setEsTransportista] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -15,6 +15,7 @@ export default function AuthContextProvider({children}) {
   const actualizarLogIn = async () => {
     setLoggedIn(await sessionStorage.getItem('token') === null ? false : true)
     setEsTransportista(await sessionStorage.getItem('transportista') === 'false' ? false : true)
+    setUsuario(await sessionStorage.getItem('usuario'))
   }
 
   const cerrarSesion = async () => {
@@ -30,4 +31,3 @@ export default function AuthContextProvider({children}) {
 
   )
 }
-

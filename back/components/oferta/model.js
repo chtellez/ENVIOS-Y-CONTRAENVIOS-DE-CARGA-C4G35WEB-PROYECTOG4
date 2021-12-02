@@ -7,9 +7,9 @@ const ofertaSchema = new Schema({
     type: Schema.ObjectId,
     ref:"usuario"
   },
-  precio:String,
-  fechaRecogida:Number,
-  horaRecogida:Number,
+  precio:Number,
+  fechaRecogida:String,
+  horaRecogida:String,
   tiempoDeEntrega:Number,
   validez:Date,
   aceptada:Number,

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import {Card, Accordion, Button, Modal} from "react-bootstrap";
+import {Card, Accordion, Button, Col} from "react-bootstrap";
 import "../styles/Aoferta.css";
+import CardPropuestas from "../components/CardPropuestas";
 
 
 
@@ -20,68 +21,48 @@ class CardVerOfertas extends React.Component {
 
     render(){
       return (
-        <Card style={{ width: "auto", borderRadius: "20px", elevation: 3 }}
-              className="Cardsita"
-        >
-            <Card.Header style={{
-                 backgroundColor: "#53b7f1",
-                 borderTopLeftRadius: 20,
-                 borderTopRightRadius: 20,
-             }}>
-               {this.props._id} 
-            </Card.Header>
-            <Card.Body>
-            <Card.Subtitle className="mb-2 text-muted">
-                    {this.props.id}
-                </Card.Subtitle>
-                <Card.Subtitle className="mb-2 text-muted">
-                    {this.props.origen}
-                </Card.Subtitle>
-                <Card.Subtitle className="mb-2 text-muted">
-                    {this.props.destino}
-                </Card.Subtitle>
-                <Card.Subtitle className="mb-2 text-muted">
-                    {this.props.largo}
-                </Card.Subtitle>
-                <Card.Subtitle className="mb-2 text-muted">
-                    {this.props.ancho}
-                </Card.Subtitle>
-                <Card.Subtitle className="mb-2 text-muted">
-                    {this.props.alto}
-                </Card.Subtitle>
-            <Card.Text>
-                <Accordion defaultActiveKey="1" flush>
-                    <Accordion.Item eventKey="0">
-                        <Accordion.Header>Ver propuestas</Accordion.Header>
-                        <Accordion.Body>
-                            {/* <Card style={{ width: "auto" }}>
-                                <Card.Header>Propuesta 1</Card.Header>
-                                <Card.Body>
-                                <Card.Subtitle className="mb-2 text-muted">
-                                    Fecha y Hora
-                                </Card.Subtitle>
-                                <Card.Text>Precio</Card.Text>
-                                <Button
-                                    variant="warning"
-                                    id="pagar"
-                                    href="#"
-                                    onClick={this.props.handleShow}
-                                >
-                                    Pagar
-                                </Button>
-                                </Card.Body>
-                            </Card> */}
-                        </Accordion.Body>
-                    </Accordion.Item>
-                </Accordion>
-            </Card.Text>
-            
-            <Button variant="danger"
-                onClick={this.props.AlClick}> Eliminar
-                </Button>
-            
-            </Card.Body>
-        </Card>
+        <Col xs={6} sm={6} md={3} lg={3} className="mb-5">
+
+            <Card style={{ width: "auto", borderRadius: "20px", elevation: 3 }}
+                className="Cardsita"
+            >
+                <Card.Header style={{
+                    backgroundColor: "#53b7f1",
+                    borderTopLeftRadius: 20,
+                    borderTopRightRadius: 20,
+                }}>
+                {this.props._id} 
+                </Card.Header>
+                <Card.Body>
+                    <Card.Subtitle className="mb-2 text-muted">
+                        <ul>
+                            <li><strong>Id: </strong>{this.props.key}</li>
+                            <li><strong>Origen: </strong>{this.props.origen}</li>
+                            <li><strong>Destino: </strong>{this.props.destino}</li>
+                            <li><strong>Largo: </strong>{this.props.largo}</li>
+                            <li><strong>Ancho: </strong>{this.props.ancho}</li>
+                            <li><strong>Alto: </strong>{this.props.alto}</li>
+                        </ul>
+                    </Card.Subtitle>
+                
+                <Card.Text>
+                    <Accordion defaultActiveKey="1" flush>
+                        <Accordion.Item eventKey="0">
+                            <Accordion.Header>Ver propuestas</Accordion.Header>
+                            <Accordion.Body>
+                                <CardPropuestas/>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+                </Card.Text>
+                
+                <Button variant="danger"
+                    onClick={this.props.AlClick}> Eliminar
+                    </Button>
+                
+                </Card.Body>
+            </Card>
+        </Col>
       );
     }
   }

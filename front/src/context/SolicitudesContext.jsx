@@ -17,6 +17,7 @@ export default function SolicitudesContextProvider({children}) {
   const [ofertaAceptada, setOfertaAceptada] = useState(false);
   const [precio, setPrecio] = useState(0);
   const [tiempoEntrega, setTiempoEntrega] = useState('');
+  const [placa, setPlaca] = useState('');
 
   const actualizarSolicitudes = async () => {
     try {
@@ -51,7 +52,8 @@ export default function SolicitudesContextProvider({children}) {
                                           ofertaAceptada, setOfertaAceptada,
                                           vehiculos, actualizarVehiculos,
                                           precio, setPrecio,
-                                          tiempoEntrega, setTiempoEntrega
+                                          tiempoEntrega, setTiempoEntrega,
+                                          placa, setPlaca
 
     }}>
       {children}

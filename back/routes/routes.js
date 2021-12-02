@@ -3,10 +3,10 @@ const router = express.Router();
 
 const indexRouter = require('./index');
 const usersRouter = require('./users');
-const demandaRoutes = require('../components/solicitud/routes')
+const solicitudesRoutes = require('../components/solicitud/routes')
 
 router.use('/', indexRouter);
 router.use('/users', usersRouter);
-router.use('/demanda', demandaRoutes);
+router.use('/solicitudes', solicitudesRoutes);
 
 module.exports = router

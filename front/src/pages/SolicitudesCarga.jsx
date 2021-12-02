@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useContext, useEffect} from "react";
 import { Table, Card, Button, OverlayTrigger, Popover, ListGroup } from "react-bootstrap";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Vehiculos from "../components/Vehiculos";
+import { SolicitudesContext } from '../context/SolicitudesContext';
+
+
 
   const mostrarVehiculos = (
     <Popover id="popover-basic" style={{ width:"1000px"}}>
@@ -39,93 +42,105 @@ import Vehiculos from "../components/Vehiculos";
     </Popover>
   );
 
-  
-  const segundaSolicitud = (
-    <Popover id="popover-basic">
-      <Popover.Header as="h3">Viruta de bronce Cali - Barranquilla</Popover.Header>
-      <Popover.Body>
-        <Card.Text><strong>Volumen:</strong> 150 mts<sup>3</sup></Card.Text>
-        <Card.Text><strong>Fecha de envío:</strong> 15 / Nov / 2021</Card.Text>
-        <Card.Text><strong>Contenido:</strong>
-        <ListGroup className="my-2">
-            <ListGroup.Item>35 Bultos de Viruta de Bronce</ListGroup.Item>
-            </ListGroup>
-        </Card.Text>
-        <Card.Text><strong>Observaciones:</strong> Cada bulto pesa 50Kgs.</Card.Text>
-      </Popover.Body>
-    </Popover>
-  );
 
-  
-  const terceraSolicitud = (
-    <Popover id="popover-basic">
-      <Popover.Header as="h3">Envio Maquinaria Facatativá - Puerto Sargar</Popover.Header>
-      <Popover.Body>
-        <Card.Text><strong>Volumen:</strong> 350 mts<sup>3</sup></Card.Text>
-        <Card.Text><strong>Fecha de envío:</strong> 18 / Nov / 2021</Card.Text>
-        <Card.Text><strong>Contenido:</strong>
-        <ListGroup className="my-2">
-            <ListGroup.Item>1 Torno CNC</ListGroup.Item>
-            </ListGroup>
-        </Card.Text>
-        <Card.Text><strong>Observaciones:</strong> Incluye herramientas</Card.Text>
-      </Popover.Body>
-    </Popover>
-  );
+  // const segundaSolicitud = (
+  //   <Popover id="popover-basic">
+  //     <Popover.Header as="h3">Viruta de bronce Cali - Barranquilla</Popover.Header>
+  //     <Popover.Body>
+  //       <Card.Text><strong>Volumen:</strong> 150 mts<sup>3</sup></Card.Text>
+  //       <Card.Text><strong>Fecha de envío:</strong> 15 / Nov / 2021</Card.Text>
+  //       <Card.Text><strong>Contenido:</strong>
+  //       <ListGroup className="my-2">
+  //           <ListGroup.Item>35 Bultos de Viruta de Bronce</ListGroup.Item>
+  //           </ListGroup>
+  //       </Card.Text>
+  //       <Card.Text><strong>Observaciones:</strong> Cada bulto pesa 50Kgs.</Card.Text>
+  //     </Popover.Body>
+  //   </Popover>
+  // );
 
-  
-  const cuartaSolicitud = (
-    <Popover id="popover-basic">
-      <Popover.Header as="h3">Mercancía Cúcuta - Leticia</Popover.Header>
-      <Popover.Body>
-        <Card.Text><strong>Volumen:</strong> 1.600 mts<sup>3</sup></Card.Text>
-        <Card.Text><strong>Fecha de envío:</strong> 1 / Dic / 2021</Card.Text>
-        <Card.Text><strong>Contenido:</strong>
-        <ListGroup className="my-2">
-            <ListGroup.Item>50 Cajas de 20*20</ListGroup.Item>
-            <ListGroup.Item>25 Cajas de 30*40 Escritorio</ListGroup.Item>
-            </ListGroup>
-        </Card.Text>
-        <Card.Text><strong>Observaciones:</strong> Mercancía delicada</Card.Text>
-      </Popover.Body>
-    </Popover>
-  );
 
-  
-  const quintaSolicitud = (
-    <Popover id="popover-basic">
-      <Popover.Header as="h3">Bagazo de caña La paila - Quinamayo</Popover.Header>
-      <Popover.Body>
-        <Card.Text><strong>Volumen:</strong> 50.000 mts<sup>3</sup></Card.Text>
-        <Card.Text><strong>Fecha de envío:</strong> 10 / Nov / 2021</Card.Text>
-        <Card.Text><strong>Contenido:</strong>
-        <ListGroup className="my-2">
-            <ListGroup.Item>Bagazo de caña 50.000 mts<sup>3</sup></ListGroup.Item>
-            </ListGroup>
-        </Card.Text>
-        <Card.Text><strong>Observaciones:</strong> Necesitamos transportar el bagazo de cañá desde nuestra plantación hasta la planta de BioDiesel</Card.Text>
-      </Popover.Body>
-    </Popover>
-  );
+  // const terceraSolicitud = (
+  //   <Popover id="popover-basic">
+  //     <Popover.Header as="h3">Envio Maquinaria Facatativá - Puerto Sargar</Popover.Header>
+  //     <Popover.Body>
+  //       <Card.Text><strong>Volumen:</strong> 350 mts<sup>3</sup></Card.Text>
+  //       <Card.Text><strong>Fecha de envío:</strong> 18 / Nov / 2021</Card.Text>
+  //       <Card.Text><strong>Contenido:</strong>
+  //       <ListGroup className="my-2">
+  //           <ListGroup.Item>1 Torno CNC</ListGroup.Item>
+  //           </ListGroup>
+  //       </Card.Text>
+  //       <Card.Text><strong>Observaciones:</strong> Incluye herramientas</Card.Text>
+  //     </Popover.Body>
+  //   </Popover>
+  // );
 
-  
-  const sextaSolicitud = (
-    <Popover id="popover-basic">
-      <Popover.Header as="h3">Ganado Arauquita - Villavicencio</Popover.Header>
-      <Popover.Body>
-        <Card.Text><strong>Volumen:</strong> 5.000 mts<sup>3</sup></Card.Text>
-        <Card.Text><strong>Fecha de envío:</strong> 25 / Nov / 2021</Card.Text>
-        <Card.Text><strong>Contenido:</strong>
-        <ListGroup className="my-2">
-            <ListGroup.Item>2.000 cabezas de ganado</ListGroup.Item>
-            </ListGroup>
-        </Card.Text>
-        <Card.Text><strong>Observaciones:</strong> Animales vivos</Card.Text>
-      </Popover.Body>
-    </Popover>
-  );
+
+  // const cuartaSolicitud = (
+  //   <Popover id="popover-basic">
+  //     <Popover.Header as="h3">Mercancía Cúcuta - Leticia</Popover.Header>
+  //     <Popover.Body>
+  //       <Card.Text><strong>Volumen:</strong> 1.600 mts<sup>3</sup></Card.Text>
+  //       <Card.Text><strong>Fecha de envío:</strong> 1 / Dic / 2021</Card.Text>
+  //       <Card.Text><strong>Contenido:</strong>
+  //       <ListGroup className="my-2">
+  //           <ListGroup.Item>50 Cajas de 20*20</ListGroup.Item>
+  //           <ListGroup.Item>25 Cajas de 30*40 Escritorio</ListGroup.Item>
+  //           </ListGroup>
+  //       </Card.Text>
+  //       <Card.Text><strong>Observaciones:</strong> Mercancía delicada</Card.Text>
+  //     </Popover.Body>
+  //   </Popover>
+  // );
+
+
+  // const quintaSolicitud = (
+  //   <Popover id="popover-basic">
+  //     <Popover.Header as="h3">Bagazo de caña La paila - Quinamayo</Popover.Header>
+  //     <Popover.Body>
+  //       <Card.Text><strong>Volumen:</strong> 50.000 mts<sup>3</sup></Card.Text>
+  //       <Card.Text><strong>Fecha de envío:</strong> 10 / Nov / 2021</Card.Text>
+  //       <Card.Text><strong>Contenido:</strong>
+  //       <ListGroup className="my-2">
+  //           <ListGroup.Item>Bagazo de caña 50.000 mts<sup>3</sup></ListGroup.Item>
+  //           </ListGroup>
+  //       </Card.Text>
+  //       <Card.Text><strong>Observaciones:</strong> Necesitamos transportar el bagazo de cañá desde nuestra plantación hasta la planta de BioDiesel</Card.Text>
+  //     </Popover.Body>
+  //   </Popover>
+  // );
+
+
+  // const sextaSolicitud = (
+  //   <Popover id="popover-basic">
+  //     <Popover.Header as="h3">Ganado Arauquita - Villavicencio</Popover.Header>
+  //     <Popover.Body>
+  //       <Card.Text><strong>Volumen:</strong> 5.000 mts<sup>3</sup></Card.Text>
+  //       <Card.Text><strong>Fecha de envío:</strong> 25 / Nov / 2021</Card.Text>
+  //       <Card.Text><strong>Contenido:</strong>
+  //       <ListGroup className="my-2">
+  //           <ListGroup.Item>2.000 cabezas de ganado</ListGroup.Item>
+  //           </ListGroup>
+  //       </Card.Text>
+  //       <Card.Text><strong>Observaciones:</strong> Animales vivos</Card.Text>
+  //     </Popover.Body>
+  //   </Popover>
+  // );
 
 const SolicitudesCarga = () => {
+
+
+  const {solicitudes, actualizarSolicitudes} = useContext(SolicitudesContext);
+
+  useEffect(()=>{
+    actualizarSolicitudes();
+  },[])
+
+  // componentDidMount(){
+  //   setSolicitudes(getSolicitudes().data)
+  // }
+
   return (
     <React.Fragment>
         <Card style={{ width: '100%' }} className="m-3">
@@ -145,7 +160,36 @@ const SolicitudesCarga = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                          <tr>
+                            <td>{solicitudes._id}</td>
+                            <td>{solicitudes.origen}</td>
+                            <td>{solicitudes.destino}</td>
+                            <td>{solicitudes.tipo}</td>
+                            <td>{solicitudes.volumen}</td>
+                            {/* <td>`${solicitudes.volumen}mts`<sup>3</sup></td> */}
+                            <td>{solicitudes.fechaRecogida}</td>
+                            <td>
+                                    <OverlayTrigger
+                                        placement="left"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={primerSolicitud}
+                                    >
+                                        <Button variant="primary" className="px-1 py-0" ><FontAwesomeIcon icon={'id-card'} size="sm"/></Button>
+                                    </OverlayTrigger>
+
+                                    <OverlayTrigger
+                                        trigger="click"
+                                        placement="left"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={mostrarVehiculos}
+                                    >
+                                        <Button variant="success" className="px-1 py-0" ><FontAwesomeIcon icon={'vote-yea'} size="sm"/></Button>
+                                    </OverlayTrigger>
+                            </td>
+                          </tr>
+
+
+                            {/* <tr>
                                 <td>1</td>
                                 <td>Bogotá</td>
                                 <td>Medellín</td>
@@ -160,7 +204,7 @@ const SolicitudesCarga = () => {
                                         >
                                             <Button variant="primary" className="px-1 py-0" ><FontAwesomeIcon icon={'id-card'} size="sm"/></Button>
                                         </OverlayTrigger>
-                                    
+
                                         <OverlayTrigger
                                             trigger="click"
                                             placement="left"
@@ -186,7 +230,7 @@ const SolicitudesCarga = () => {
                                         >
                                             <Button variant="primary" className="px-1 py-0" ><FontAwesomeIcon icon={'id-card'} size="sm"/></Button>
                                         </OverlayTrigger>
-                                    
+
                                         <OverlayTrigger
                                             trigger="click"
                                             placement="left"
@@ -212,7 +256,7 @@ const SolicitudesCarga = () => {
                                         >
                                             <Button variant="primary" className="px-1 py-0" ><FontAwesomeIcon icon={'id-card'} size="sm"/></Button>
                                         </OverlayTrigger>
-                                    
+
                                         <OverlayTrigger
                                             trigger="click"
                                             placement="left"
@@ -238,7 +282,7 @@ const SolicitudesCarga = () => {
                                         >
                                             <Button variant="primary" className="px-1 py-0" ><FontAwesomeIcon icon={'id-card'} size="sm"/></Button>
                                         </OverlayTrigger>
-                                    
+
                                         <OverlayTrigger
                                             trigger="click"
                                             placement="left"
@@ -264,7 +308,7 @@ const SolicitudesCarga = () => {
                                         >
                                             <Button variant="primary" className="px-1 py-0" ><FontAwesomeIcon icon={'id-card'} size="sm"/></Button>
                                         </OverlayTrigger>
-                                    
+
                                         <OverlayTrigger
                                             trigger="click"
                                             placement="left"
@@ -290,7 +334,7 @@ const SolicitudesCarga = () => {
                                         >
                                             <Button variant="primary" className="px-1 py-0" ><FontAwesomeIcon icon={'id-card'} size="sm"/></Button>
                                         </OverlayTrigger>
-                                    
+
                                         <OverlayTrigger
                                             trigger="click"
                                             placement="left"
@@ -300,12 +344,12 @@ const SolicitudesCarga = () => {
                                             <Button variant="success" className="px-1 py-0" ><FontAwesomeIcon icon={'vote-yea'} size="sm"/></Button>
                                         </OverlayTrigger>
                                 </td>
-                            </tr>
+                            </tr> */}
                         </tbody>
                     </Table>
             </Card.Body>
         </Card>
-        
+
     </React.Fragment>
   );
 };

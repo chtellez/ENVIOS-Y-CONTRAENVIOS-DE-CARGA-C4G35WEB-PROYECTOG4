@@ -14,7 +14,7 @@ async function addSolicitud(req, res) {
   try {
     const solicitud = req.body;
     const newSolicitud = await store.add(solicitud)
-    response.success(req,res, res.json(newSolicitud),201)
+    response.success(req,res, newSolicitud,201)
   } catch (error) {
     response.error(req, res, 'Error al crear la solicitud de carga', 500, error)
   }

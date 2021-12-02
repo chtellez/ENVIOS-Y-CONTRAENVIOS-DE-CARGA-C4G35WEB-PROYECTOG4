@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,6 +10,9 @@ import { AuthContext } from '../context/AuthContext';
 
 const NavigationBar = () => {
   const {loggedIn, actualizarLogIn, esTransportista, actualizarEsTransportista, validarAuth} = useContext(AuthContext);
+  useEffect(()=>{
+
+  })
 
   return (
     <React.Fragment>

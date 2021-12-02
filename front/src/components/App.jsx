@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core/"
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
-import { faUser, faArrowRight, faShippingFast, faPeopleCarry,faAddressCard,faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck } from "@fortawesome/free-solid-svg-icons"
+import { faUser, faArrowRight, faLock, faShippingFast, faPeopleCarry,faAddressCard,faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck } from "@fortawesome/free-solid-svg-icons"
 
-
+import "../styles/Scroll.css";
 
 import PagAgregarVehiculo from "../pages/PagAgregarVehiculo";
 import Layout from './Layout'
@@ -22,7 +22,7 @@ import SolicitudesCarga from "../pages/SolicitudesCarga";
 import AuthContextProvider from "../context/AuthContext";
 
 
-library.add(fab, faArrowRight, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck, faAddressCard, faPeopleCarry, faShippingFast, faUser)
+library.add(fab, faArrowRight, faLock, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck, faAddressCard, faPeopleCarry, faShippingFast, faUser)
 
 
 
@@ -54,6 +54,7 @@ function App() {
         </footer>
       </AuthContextProvider>
     </div>
+    
   );
 }
 

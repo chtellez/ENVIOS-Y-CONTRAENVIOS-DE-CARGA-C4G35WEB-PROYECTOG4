@@ -42,7 +42,7 @@ class CrearOferta extends React.Component {
     const fechaRecogida = "2021-12-05T00:00:00.000+00:00";
 
     // console.log("Datos", origen, destino, largo, ancho, alto, peso, tipo, fechaRecogida);
-    await Axios.post('api/demanda/', {
+    await Axios.post('api/solicitudes', {
       origen: origen,
       destino: destino,
       largo: largo,
@@ -61,28 +61,28 @@ class CrearOferta extends React.Component {
       })
   }
 
-  manejadorChangeLargo(){    
+  manejadorChangeLargo(){
     const lbl = document.getElementById("LblLargo");
     const range = document.getElementById("Largo");
     const valor = range.value;
     lbl.innerHTML = valor + " cm";
   }
 
-  manejadorChangeAncho(){    
+  manejadorChangeAncho(){
     const lbl = document.getElementById("LblAncho");
     const range = document.getElementById("Ancho");
     const valor = range.value;
     lbl.innerHTML = valor + " cm";
   }
 
-  manejadorChangeAlto(){    
+  manejadorChangeAlto(){
     const lbl = document.getElementById("LblAlto");
     const range = document.getElementById("Alto");
     const valor = range.value;
     lbl.innerHTML = valor + " cm";
   }
 
-  manejadorChangePeso(){    
+  manejadorChangePeso(){
     const lbl = document.getElementById("LblPeso");
     const range = document.getElementById("Peso");
     const valor = range.value;
@@ -136,7 +136,7 @@ class CrearOferta extends React.Component {
               <Col >
                 <Form.Group controlId="Largo">
                   <Form.Label>Largo (cm)</Form.Label>
-                  <Form.Range max="1000" step="10" onChange={() => this.manejadorChangeLargo()} >                  
+                  <Form.Range max="1000" step="10" onChange={() => this.manejadorChangeLargo()} >
                   </Form.Range >
                   <Form.Label id="LblLargo">0 cm</Form.Label>
                 </Form.Group>
@@ -144,7 +144,7 @@ class CrearOferta extends React.Component {
               <Col>
                 <Form.Group controlId="Ancho">
                   <Form.Label>Ancho (cm)</Form.Label>
-                  <Form.Range max="1000" step="10" onChange={() => this.manejadorChangeAncho()} >                  
+                  <Form.Range max="1000" step="10" onChange={() => this.manejadorChangeAncho()} >
                   </Form.Range >
                   <Form.Label id="LblAncho">0 cm</Form.Label>
                 </Form.Group>
@@ -152,7 +152,7 @@ class CrearOferta extends React.Component {
               <Col>
                 <Form.Group controlId="Alto">
                   <Form.Label>Alto (cm)</Form.Label>
-                  <Form.Range max="1000" step="10" onChange={() => this.manejadorChangeAlto()} >                  
+                  <Form.Range max="1000" step="10" onChange={() => this.manejadorChangeAlto()} >
                   </Form.Range >
                   <Form.Label id="LblAlto">0 cm</Form.Label>
                 </Form.Group>
@@ -165,7 +165,7 @@ class CrearOferta extends React.Component {
               </Col>
               <Col>
 
-              
+
                 <Form.Group controlId="Peso">
                   <Form.Label>Peso aproximado (Kg)</Form.Label>
                   <Form.Range />

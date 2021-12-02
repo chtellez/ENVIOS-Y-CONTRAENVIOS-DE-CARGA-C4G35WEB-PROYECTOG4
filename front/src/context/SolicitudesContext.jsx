@@ -1,4 +1,5 @@
 import React, {createContext, useState} from 'react';
+import Axios from 'axios'
 
 import { getSolicitudes } from "../services/solicitudService";
 
@@ -9,10 +10,14 @@ export default function SolicitudesContextProvider({children}) {
 
   const [solicitudes, setSolicitudes] = useState([]);
 
-
   const actualizarSolicitudes = async () => {
     try {
-      setSolicitudes(await getSolicitudes().data);
+      // const res = await getSolicitudes()
+      // console.log(res)
+      // setSolicitudes(res);
+      const res = await Axios.get('api/solicitudes')
+      setSolicitudes(res.data["body"])
+      console.log(solicitudes)
     } catch (error) {
       console.error(error);
     }

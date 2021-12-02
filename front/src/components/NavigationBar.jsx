@@ -8,24 +8,29 @@ import "../styles/NavigationBar.css";
 import { AuthContext } from '../context/AuthContext';
 
 
+
 const NavigationBar = () => {
   const {loggedIn, actualizarLogIn, esTransportista, actualizarEsTransportista, validarAuth} = useContext(AuthContext);
   useEffect(()=>{
 
   })
 
+  
   return (
     <React.Fragment>
           <Navbar fixed="top" className="NavigationBar justify-content-end " collapseOnSelect >
 
-          <Col className="d-flex" style={{width:"30px", height:"30px"}} id="logo">
-            <div  className="col-12 col-sm-5 col-md-4 col-lg-2"><Card.Img src={logo} id="pocion" style={{width:"30px", height:"30px"}} ></Card.Img></div>
+          <Col className="d-flex" style={{width:"50px", height:"50px"}} id="logo">
+            <div  className="col-12 col-sm-5 col-md-4 col-lg-2"><Card.Img src={logo} id="pocion" style={{width:"70px", height:"auto"}} ></Card.Img></div>
           </Col>
           <Nav.Item>
           <Nav.Link href="/" onClick={validarAuth} className="text-dark"><FontAwesomeIcon icon={'home'} size="sm"/> Home</Nav.Link>
           </Nav.Item>
           <Nav.Item>
           <Nav.Link href="/aceptar_oferta" onClick={validarAuth}  className={'text-dark ' + (loggedIn?(esTransportista?'d-none':''): 'd-none')}><FontAwesomeIcon icon={'vote-yea'} size="sm"/> Aceptar Oferta</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+          <Nav.Link href="/login" onClick={validarAuth}  className={'text-dark ' + (loggedIn?(esTransportista?'d-none':''): 'd-none')}><FontAwesomeIcon icon={'vote-yea'} size="sm"/> login</Nav.Link>
           </Nav.Item>
           <Nav.Item>
           <Nav.Link href="/crear_oferta" onClick={validarAuth} className={'text-dark ' + (loggedIn?(esTransportista?'':'d-none'): 'd-none')}><FontAwesomeIcon icon={'shipping-fast'} size="sm"/> Crear Oferta</Nav.Link>

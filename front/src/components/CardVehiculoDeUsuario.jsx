@@ -1,7 +1,5 @@
-import { Button, Card, ListGroup } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import React, { useState } from 'react';
-import ReactDOM, { render } from 'react-dom';
-import PropTypes from 'prop-types';
 import "../styles/AgregarVehiculo.css";
 
 class CardVehiculoDeUsuario extends React.Component {
@@ -11,11 +9,11 @@ class CardVehiculoDeUsuario extends React.Component {
   render() {
     return (
       <Card>
-        <Card.Header ><strong>Camión Chevrolet 20 Toneladas</strong> </Card.Header>
+        <Card.Header ><strong>VEHÍCULO DE CARGA. </strong> </Card.Header>
         <Card.Body>
           {/* <Card.Title>Tipo: Camión 20 Toneladas</Card.Title> */}
           <Card.Text>
-            Vehículo adecuado para transporte de ganado y cerdos.
+            Idóneo para transporte puerta a puerta.
           </Card.Text>
           <ul>
             <li><strong>Tipo Carga: </strong>{this.props.TipoCarga}</li>

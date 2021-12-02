@@ -10,6 +10,12 @@ class CrearOferta extends React.Component {
     this.state = { date: new Date() };
   }
 
+  componentDidMount() {
+    this.manejadorChangeLargo();
+    this.manejadorChangeAncho();
+    this.manejadorChangeAlto();
+  }
+
   async ManejadorBtnAgregar() {
 
     const e = document.getElementById("Origen");
@@ -53,6 +59,27 @@ class CrearOferta extends React.Component {
       .catch(e => {
         console.log(e);
       })
+  }
+
+  manejadorChangeLargo(){    
+    const lbl = document.getElementById("LblLargo");
+    const range = document.getElementById("Largo");
+    const valor = range.value;
+    lbl.innerHTML = valor + " cm";
+  }
+
+  manejadorChangeAncho(){    
+    const lbl = document.getElementById("LblAncho");
+    const range = document.getElementById("Ancho");
+    const valor = range.value;
+    lbl.innerHTML = valor + " cm";
+  }
+
+  manejadorChangeAlto(){    
+    const lbl = document.getElementById("LblAlto");
+    const range = document.getElementById("Alto");
+    const valor = range.value;
+    lbl.innerHTML = valor + " cm";
   }
 
   render() {
@@ -100,21 +127,26 @@ class CrearOferta extends React.Component {
               </Col>
               <Col >
                 <Form.Group controlId="Largo">
-                  <Form.Label>Largo</Form.Label>
-                  <Form.Range />
+                  <Form.Label>Largo (cm)</Form.Label>
+                  <Form.Range max="1000" step="10" onChange={() => this.manejadorChangeLargo()} >                  
+                  </Form.Range >
+                  <Form.Label id="LblLargo">0 cm</Form.Label>
                 </Form.Group>
               </Col>
               <Col>
                 <Form.Group controlId="Ancho">
-                  <Form.Label>Ancho</Form.Label>
-                  <Form.Range />
+                  <Form.Label>Ancho (cm)</Form.Label>
+                  <Form.Range max="1000" step="10" onChange={() => this.manejadorChangeAncho()} >                  
+                  </Form.Range >
+                  <Form.Label id="LblAncho">0 cm</Form.Label>
                 </Form.Group>
               </Col>
               <Col>
                 <Form.Group controlId="Alto">
-                  <Form.Label>Alto</Form.Label>
-                  <Form.Range />
-
+                  <Form.Label>Alto (cm)</Form.Label>
+                  <Form.Range max="1000" step="10" onChange={() => this.manejadorChangeAlto()} >                  
+                  </Form.Range >
+                  <Form.Label id="LblAlto">0 cm</Form.Label>
                 </Form.Group>
               </Col>
               <Col xs={0} lg={2}  >

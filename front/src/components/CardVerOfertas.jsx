@@ -31,15 +31,30 @@ class CardVerOfertas extends React.Component {
                {this.props._id} 
             </Card.Header>
             <Card.Body>
+            <Card.Subtitle className="mb-2 text-muted">
+                    {this.props.id}
+                </Card.Subtitle>
                 <Card.Subtitle className="mb-2 text-muted">
-                    Descripcion breve de la oferta
+                    {this.props.origen}
+                </Card.Subtitle>
+                <Card.Subtitle className="mb-2 text-muted">
+                    {this.props.destino}
+                </Card.Subtitle>
+                <Card.Subtitle className="mb-2 text-muted">
+                    {this.props.largo}
+                </Card.Subtitle>
+                <Card.Subtitle className="mb-2 text-muted">
+                    {this.props.ancho}
+                </Card.Subtitle>
+                <Card.Subtitle className="mb-2 text-muted">
+                    {this.props.alto}
                 </Card.Subtitle>
             <Card.Text>
                 <Accordion defaultActiveKey="1" flush>
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>Ver propuestas</Accordion.Header>
                         <Accordion.Body>
-                            <Card style={{ width: "auto" }}>
+                            {/* <Card style={{ width: "auto" }}>
                                 <Card.Header>Propuesta 1</Card.Header>
                                 <Card.Body>
                                 <Card.Subtitle className="mb-2 text-muted">
@@ -55,7 +70,7 @@ class CardVerOfertas extends React.Component {
                                     Pagar
                                 </Button>
                                 </Card.Body>
-                            </Card>
+                            </Card> */}
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>

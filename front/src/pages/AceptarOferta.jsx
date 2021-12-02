@@ -3,13 +3,23 @@ import "../styles/Aoferta.css";
 import { Row, Col, Card, Accordion, Button, Modal,} from "react-bootstrap";
 import img from "../assets/Hand-Truck.svg";
 import CardVerOfertas from "../components/CardVerOfertas";
+import Axios from 'axios'
 
 class AceptarOferta extends React.Component  {
 
   constructor(props) {
     super(props);
     this.state = {
-      StsOfertas: []
+      StsOfertas: [
+      //   {
+      //     id:"1234",
+      //     origen:"Pereira",
+      //   destino:"Palmira",
+      //   largo:"1",
+      //   ancho:"2",
+      //   alto:"3"
+      // }
+      ]
     }
     this.CargaOfertasBD()
   }
@@ -21,10 +31,12 @@ class AceptarOferta extends React.Component  {
           {
             StsOfertas: response.data["body"],
           })
+          // console.log(response);
       })
       .catch(e => {
         console.log(e);
       })
+
   }
 
   RenderizarOfertas() {
@@ -34,9 +46,13 @@ class AceptarOferta extends React.Component  {
           <Col xs={12} sm={12} lg={12} className="mb-3 my-3">
             <CardVerOfertas
               key={oferta.id}
-              TipoCarga={oferta.tipoCarga}
-              Placa={oferta.placa}
-              Capacidad={oferta.capacidad} />
+              id={oferta.id}
+              origen={oferta.origen}
+              destino={oferta.destino}
+              largo={oferta.largo}
+              ancho={oferta.ancho}
+              alto={oferta.alto}
+        />
           </Col>
         );
       })
@@ -89,6 +105,8 @@ class AceptarOferta extends React.Component  {
       <React.Fragment>
         <div className="contenedor">
           <section className="section">
+            {/* <Button onClick={() => this.CargaOfertasBD()}>click
+            </Button> */}
             <Row>
               <Col
                 xs={6}
@@ -138,12 +156,12 @@ class AceptarOferta extends React.Component  {
             style={{ marginLeft: "22px" }}
           >
             <Col xs={6} sm={6} md={3} lg={3} className="mb-5">
-              {this.Renderizarofertass()}
+              {this.RenderizarOfertas()}
             </Col>
           </Row>
           <Modal
-              show={show}
-              onHide={handleClose}
+              // show={show}
+              // onHide={handleClose}
               backdrop="static"
               keyboard={false}
           >
@@ -154,9 +172,9 @@ class AceptarOferta extends React.Component  {
               Nombre, Apellido, vehiculo placa.
               </Modal.Body>
               <Modal.Footer>
-              <Button variant="primary" onClick={handleClose}>
+              {/* <Button variant="primary" onClick={handleClose}>
                   Aceptar
-              </Button>
+              </Button> */}
               </Modal.Footer>
           </Modal>
 

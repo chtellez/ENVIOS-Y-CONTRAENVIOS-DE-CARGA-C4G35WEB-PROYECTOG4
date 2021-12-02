@@ -45,7 +45,7 @@ export default function SignInSide() {
      const usuario = respuesta.data.username
      //hasta aqui no se deberia mostrar en el sesionStorage, cambiar en un futuro.
      const transportista = respuesta.data.transportista
-     const _id= respuesta.data._id
+     const idUsuario= respuesta.data.id
  
      sessionStorage.setItem('token',token)
      sessionStorage.setItem('nombre',nombre)
@@ -57,7 +57,7 @@ export default function SignInSide() {
      sessionStorage.setItem('usuario',usuario)
 
      sessionStorage.setItem('transportista',transportista)
-     sessionStorage.setItem('_id',_id)
+     sessionStorage.setItem('idUsuario',idUsuario)
  
      Swal.fire({
        icon:'success',

@@ -1,5 +1,5 @@
 const UsuariosCtrl= {}
-const Usuario = require('../models/UsuarioModels')
+const Usuario = require('./UsuarioModels')
 const bcrypt = require('bcryptjs')
 const jwt= require('jsonwebtoken')
 

@@ -6,7 +6,7 @@ const usersRouter = require('./users');
 
 const demandaRoutes  = require('../components/solicitud/routes')
 const vehiculoRoutes = require('../components/vehiculo/routes')
-const usuarioRouter = require('./Usuario.route');
+const usuarioRouter = require('../components/usuario/Usuario.route');
 
 router.use('/', indexRouter);
 router.use('/users', usersRouter);

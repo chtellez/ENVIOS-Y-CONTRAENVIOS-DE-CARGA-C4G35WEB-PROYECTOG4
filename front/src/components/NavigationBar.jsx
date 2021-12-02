@@ -44,7 +44,7 @@ const NavigationBar = () => {
           </Nav.Item>
 
           <Nav.Item>
-            <Nav.Link href="/crear_oferta" onClick={actualizarLogIn} className={'text-dark ' + (loggedIn?(esTransportista?'':'d-none'): 'd-none')}>
+            <Nav.Link href="/crear_oferta" onClick={actualizarLogIn} className={'text-dark ' + (loggedIn?(esTransportista?'d-none':''): 'd-none')}>
               <FontAwesomeIcon icon={'shipping-fast'} size="sm"/> Crear Oferta
             </Nav.Link>
           </Nav.Item>

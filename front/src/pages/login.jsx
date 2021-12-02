@@ -6,7 +6,7 @@ import { APIHOST as host } from '../app.json';
 // import Loading from '../Loading/Loading';
 import loginImg from "../assets/login.svg";
 import "../styles/login.scss";
-import { Container, Form, Button } from "react-bootstrap";
+import {  Form, Button, Container } from "react-bootstrap";
 
 export default function SignInSide() {
   //aca se establece los datos que se tomaran del formulario
@@ -77,7 +77,7 @@ export default function SignInSide() {
   }
 
   return (
-    <Container className="base-container">
+    <Container className="base-container my-5">
       {/* <Loading show={this.state.loading} /> */}
       <div className="header">Inicio Sesión</div>
 

@@ -20,7 +20,7 @@ import Axios from 'axios'
 
     const guardarOferta = async ()=> {
       await Axios.post('api/ofertas', {
-        user:sessionStorage.getItem('_id'),
+        user:sessionStorage.getItem('idUsuario'),
         precio:precio,
         fechaRecogida:fechaOferta,
         horaRecogida:"",
@@ -144,7 +144,7 @@ import Axios from 'axios'
             </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={guardarOferta}>Guardar </Button>
+          <Button onClick={() => setModalShow(false)}>Guardar </Button>
           <Button onClick={() => setModalShow(false)}>Close</Button>
         </Modal.Footer>
       </Modal>

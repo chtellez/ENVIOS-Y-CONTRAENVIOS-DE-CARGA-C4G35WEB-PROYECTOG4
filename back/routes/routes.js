@@ -1,17 +1,14 @@
 const express = require("express");
 const router = express.Router();
 
-const indexRouter = require('./index');
-const usersRouter = require('./users');
-
-const demandaRoutes  = require('../components/solicitud/routes')
+const solicitudesRoutes = require('../components/solicitud/routes')
 const vehiculoRoutes = require('../components/vehiculo/routes')
+const ofertasRouter = require('../components/oferta/routes');
 const usuarioRouter = require('../components/usuario/Usuario.route');
 
-router.use('/', indexRouter);
-router.use('/users', usersRouter);
 router.use('/usuario',usuarioRouter);
-router.use('/demanda', demandaRoutes);
+router.use('/solicitudes', solicitudesRoutes);
 router.use('/vehiculo', vehiculoRoutes);
+router.use('/ofertas', ofertasRouter);
 
 module.exports = router

@@ -25,7 +25,7 @@ class AceptarOferta extends React.Component  {
     this.CargaOfertasBD()
   }
 
-  
+
 
   async CargaOfertasBD() {
     await Axios.get('api/demanda/')
@@ -42,12 +42,12 @@ class AceptarOferta extends React.Component  {
 
   }
 
-    
+
   async ManejadorEliminar(idSolicitud) {
-    
+
       const aux = idSolicitud;
       await Axios.delete('api/demanda/',{ data: { "_id": aux } })
-         
+
         .then(response => {
           console.log(response);
           const mensaje= response.data.mensaje
@@ -65,13 +65,13 @@ class AceptarOferta extends React.Component  {
                 'Oferta eliminada',
                 'Tu oferta a sido eliminada correctamente',
                 'success'
-              ) 
+              )
               this.CargaOfertasBD()
             }
           })
-          
-         
-          
+
+
+
         })
         .catch(e => {
           console.log(e);
@@ -82,7 +82,7 @@ class AceptarOferta extends React.Component  {
     return (
       this.state.StsOfertas.map((oferta) => {
         return (
-          
+
             <CardVerOfertas
               key={oferta.id}
               // id={oferta.id}
@@ -153,9 +153,9 @@ class AceptarOferta extends React.Component  {
             className=" justify-content-center"
             style={{ marginLeft: "2px" }}
           >
-            
+
               {this.RenderizarOfertas()}
-            
+
           </Row>
           <Modal
               // show={show}
@@ -176,7 +176,7 @@ class AceptarOferta extends React.Component  {
               </Modal.Footer>
           </Modal>
 
-          
+
         </div>
       </React.Fragment>
     );

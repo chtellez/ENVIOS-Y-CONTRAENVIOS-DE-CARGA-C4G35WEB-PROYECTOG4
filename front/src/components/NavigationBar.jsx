@@ -14,7 +14,7 @@ const NavigationBar = () => {
   useEffect(()=>{
     actualizarLogIn()
   },[])
-  
+
   return (
     <React.Fragment>
         <Navbar fixed="top" className="NavigationBar justify-content-end " collapseOnSelect >

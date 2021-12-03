@@ -20,6 +20,7 @@ import Register from "../pages/register"
 import Footer from "./Footer";
 import SolicitudesCarga from "../pages/SolicitudesCarga";
 import AuthContextProvider from "../context/AuthContext";
+import SolicitudesContext from "../context/SolicitudesContext"
 
 
 library.add(fab, faArrowRight, faLock, faHome, faListAlt, faBuilding, faTruckMoving, faSignInAlt, faRegistered, faTruckLoading, faIdCard, faVoteYea, faCheck, faAddressCard, faPeopleCarry, faShippingFast, faUser)
@@ -36,25 +37,27 @@ function App() {
           <NavigationBar></NavigationBar>
         </header>
         <Layout>
-          <BrowserRouter>
-            <Routes>
-              <Route exact path="/" element={<Home />}></Route>
-              <Route exact path="/crear_oferta" element={<CrearOferta />}></Route>
-              <Route exact path="/solicitudes" element={<SolicitudesCarga />}></Route>
-              <Route exact path="/aceptar_oferta" element={<AceptarOferta />}></Route>
-              <Route exact path="/login" element={<InicioSesion />}></Route>
-              <Route exact path="/register" element={<Register />}></Route>
-              <Route exact path="/perfil" element={<Perfil />}></Route>
-              <Route exact path="/PagAgregarVehiculo" element={<PagAgregarVehiculo/>}></Route>
-            </Routes>
+          <SolicitudesContext>
+            <BrowserRouter>
+              <Routes>
+                <Route exact path="/" element={<Home />}></Route>
+                <Route exact path="/crear_oferta" element={<CrearOferta />}></Route>
+                <Route exact path="/solicitudes" element={<SolicitudesCarga />}></Route>
+                <Route exact path="/aceptar_oferta" element={<AceptarOferta />}></Route>
+                <Route exact path="/login" element={<InicioSesion />}></Route>
+                <Route exact path="/register" element={<Register />}></Route>
+                <Route exact path="/perfil" element={<Perfil />}></Route>
+                <Route exact path="/PagAgregarVehiculo" element={<PagAgregarVehiculo/>}></Route>
+              </Routes>
           </BrowserRouter>
+          </SolicitudesContext>
         </Layout>
         <footer>
           <Footer/>
         </footer>
       </AuthContextProvider>
     </div>
-    
+
   );
 }
 

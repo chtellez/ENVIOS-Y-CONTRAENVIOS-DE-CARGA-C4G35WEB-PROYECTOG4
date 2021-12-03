@@ -1,8 +1,9 @@
 const store = require('./store');
 const response = require('../../network/response');
 
-async function getSolicitudes(req, res){
+async function getOfertas(req, res){
   try {
+    // const filterOfertas
     const solicitudes = await store.list()
     response.success(req, res, solicitudes, 200)
   } catch (error) {
@@ -10,7 +11,7 @@ async function getSolicitudes(req, res){
   }
 }
 
-async function addSolicitud(req, res) {
+async function addOferta(req, res) {
   try {
     const solicitud = req.body;
     const newSolicitud = await store.add(solicitud)
@@ -19,20 +20,10 @@ async function addSolicitud(req, res) {
     response.error(req, res, 'Error al crear la solicitud de carga', 500, error)
   }
 }
-async function deleteSolicitud(req, res) {
-  try {
-    const idSolicitud = req.body;
-    const newSolicitud = await store.del(idSolicitud);
-    response.success(req,res, res.json(newSolicitud),201)
-  } catch (error) {
-    response.error(req, res, 'Error al eliminar la solicitud de carga', 500, error)
-  }
-}
 
 module.exports = {
 
-  getSolicitudes,
-  addSolicitud,
-  deleteSolicitud,
+  getOfertas,
+  addOferta,
 
 }

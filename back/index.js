@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-
+require('dotenv').config();
 /**
  * Module dependencies.
  */
 
+const express = require('express');
 var app = require('./app');
 var debug = require('debug')('proyecto-back:server');
 var http = require('http');
@@ -12,7 +13,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.BACK_PORT || '3001');
+var port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 
 /**
@@ -20,6 +21,15 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(__dirname + '/site/'));
+  app.get('*', (req, res) => {
+    res.sendFile(__dirname + '/site/index.html');
+  });
+}
+
 
 /**
  * Listen on provided port, on all network interfaces.

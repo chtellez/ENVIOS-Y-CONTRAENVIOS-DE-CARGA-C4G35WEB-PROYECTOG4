@@ -1,7 +1,7 @@
 import React, { useState, } from 'react'
 import Axios from 'axios';
 import Swal from 'sweetalert2'
-import { APIHOST as host } from '../app.json';
+// import { APIHOST as host } from '../app.json';
 
 
 import Loading from '../Loading/Loading';
@@ -27,7 +27,7 @@ export default function RegistrarUsuario() {
     const usuario={nombre,apellido,cedula,telefono,correo,username,contrasena,transportista}
     const respuesta = await Axios.post('api/usuario/crear',usuario) //Cambiar ruta de acuerdo al back
     console.log(respuesta)
-    const mensaje = respuesta.data.mensaje 
+    const mensaje = respuesta.data.mensaje
     if(mensaje!=='Bienvenido')
     {
 
@@ -41,7 +41,7 @@ export default function RegistrarUsuario() {
     }
 
     else{
-      
+
       Swal.fire({
         icon:'success',
         title:"Usuario creado correctamente",
@@ -59,8 +59,8 @@ export default function RegistrarUsuario() {
 
   }
 
-  
-  
+
+
   return (
 
     <div className="base-container">
@@ -82,7 +82,7 @@ export default function RegistrarUsuario() {
                     type="text"
                     placeholder="Nombre:"
                     required
-                    onChange={(e)=>setNombre(e.target.value)} 
+                    onChange={(e)=>setNombre(e.target.value)}
                   />
                 </FloatingLabel>
               </Form.Group>
@@ -97,7 +97,7 @@ export default function RegistrarUsuario() {
                     type="text"
                     placeholder="Apellido:"
                     required
-                    onChange={(e)=>setApellido(e.target.value)} 
+                    onChange={(e)=>setApellido(e.target.value)}
                   />
                 </FloatingLabel>
               </Form.Group>
@@ -114,7 +114,7 @@ export default function RegistrarUsuario() {
                     type="number"
                     placeholder="Cedula:"
                     required
-                    onChange={(e)=>setCedula(e.target.value)} 
+                    onChange={(e)=>setCedula(e.target.value)}
                   />
                 </FloatingLabel>
               </Form.Group>
@@ -129,7 +129,7 @@ export default function RegistrarUsuario() {
                     type="tel"
                     placeholder="Telefono:"
                     required
-                    onChange={(e)=>setTelefono(e.target.value)} 
+                    onChange={(e)=>setTelefono(e.target.value)}
                   />
                 </FloatingLabel>
               </Form.Group>
@@ -146,7 +146,7 @@ export default function RegistrarUsuario() {
                     type="email"
                     placeholder="Correo:"
                     required
-                    onChange={(e)=>setCorreo(e.target.value)} 
+                    onChange={(e)=>setCorreo(e.target.value)}
                   />
                 </FloatingLabel>
               </Form.Group>
@@ -161,7 +161,7 @@ export default function RegistrarUsuario() {
                     type="text"
                     placeholder="Nombre de usuario:"
                     required
-                    onChange={(e)=>setUsername(e.target.value)} 
+                    onChange={(e)=>setUsername(e.target.value)}
                   />
                 </FloatingLabel>
               </Form.Group>
@@ -177,10 +177,10 @@ export default function RegistrarUsuario() {
                   <Form.Control
                     type="password"
                     placeholder="Contraseña:"
-                    pattern=".{8,}" 
+                    pattern=".{8,}"
                     title="la contraseña debe tener un minimo de 8 caracteres"
                     required
-                    onChange={(e)=>setContrasena(e.target.value)} 
+                    onChange={(e)=>setContrasena(e.target.value)}
                   />
                 </FloatingLabel>
               </Form.Group>
@@ -208,7 +208,7 @@ export default function RegistrarUsuario() {
                   id="formHorizontalRadios2"
                   onChange={(e)=>setTransportista(e.target.value)}
                 />
-              
+
               </Form.Group>
             </Col>
           </Row>
@@ -219,15 +219,15 @@ export default function RegistrarUsuario() {
             variant="primary"
             type="submit"
             className="btn"
-            
+
           >
             Registrarce
           </Button> */}
-          
+
         </form>
       </div>
       <div className="footer">
-        
+
         <br /><br /><br /><br /><br /><br />
       </div>
     </div>

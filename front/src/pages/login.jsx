@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Axios from 'axios'
 import Swal from 'sweetalert2'
-import { APIHOST as host } from '../app.json';
+// import { APIHOST as host } from '../app.json';
 
 // import Loading from '../Loading/Loading';
 import loginImg from "../assets/login.svg";
@@ -12,26 +12,26 @@ export default function SignInSide() {
   //aca se establece los datos que se tomaran del formulario
   const [correo,setCorreo]= useState('')
   const [contrasena,setContrasena]= useState('')
- 
+
   const sesion=async(e)=>{
- 
+
    e.preventDefault();
    const usuario={correo,contrasena}
    const respuesta = await Axios.post('api/usuario/login',usuario); //acá se envian a peticion
    console.log(respuesta)
    const mensaje= respuesta.data.mensaje
- 
+
    if(mensaje!=='Bienvenido') {
- 
+
      Swal.fire({
        icon:'error',
        title: mensaje,
        showConfirmButton: false,
        timer: 1500
      })
- 
+
    }
- 
+
    else {
 
     //aca se establece lo que se almacenara en el sesionstorage
@@ -46,7 +46,7 @@ export default function SignInSide() {
      //hasta aqui no se deberia mostrar en el sesionStorage, cambiar en un futuro.
      const transportista = respuesta.data.transportista
      const idUsuario= respuesta.data.id
- 
+
      sessionStorage.setItem('token',token)
      sessionStorage.setItem('nombre',nombre)
 
@@ -58,7 +58,7 @@ export default function SignInSide() {
 
      sessionStorage.setItem('transportista',transportista)
      sessionStorage.setItem('idUsuario',idUsuario)
- 
+
      Swal.fire({
        icon:'success',
        title: mensaje,
@@ -70,8 +70,8 @@ export default function SignInSide() {
      }else{
        window.location.href='/'
      }
-     
- 
+
+
    }
 
   }
